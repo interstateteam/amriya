@@ -1,0 +1,91 @@
+.intro {
+	padding: 0 $wrap-desk-md;
+	@include tabletMaxi {
+		padding: 0 $wrap-tab-md;
+	}
+	@include mobile {
+		padding: 0 $wrap-mob-md;
+	}
+}
+
+.intro--home {
+	padding-top: 116px;
+	padding-bottom: 38px;
+	@include tabletMaxi {
+		padding-top: 10px;
+		padding-bottom: 143px;
+	}
+	@include mobile {
+		padding-top: 115px;
+		padding-bottom: 135px;
+	}
+}
+
+.intro--room {
+	padding-top: 133px;
+	padding-bottom: 126px;
+	@include tabletMaxi {
+		padding-top: 96px;
+		padding-bottom: 293px;
+	}
+	@include mobile {
+		padding-top: 60px;
+		padding-bottom: 74px;
+	}
+}
+
+.intro__container {
+	@extend %container;
+	max-width: 940px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include tabletMaxi {
+		max-width: 690px;
+	}
+}
+
+.svg-logo-plant {
+	.intro & {
+		margin-bottom: 38px;
+		width: 84px;
+		height: 100px;
+		fill: $c-green;
+		@include tabletMaxi {
+			margin-bottom: 27px;
+		}
+		@include mobile {
+			margin-bottom: 44px;
+		}
+	}
+}
+
+.intro__description {
+	margin-bottom: 55px;
+	font-family: $font-accent;
+	text-align: center;
+	font-size: 34px;
+	line-height: (45/34);
+	font-weight: 200;
+	@include tabletMaxi {
+		margin-bottom: 46px;
+		font-size: 28px;
+		line-height: (37/28);
+	}
+	@include mobile {
+		margin-bottom: 33px;
+		font-size: 22px;
+		line-height: (31/22);
+	}
+
+	b, strong {
+		font-weight: 400;
+	}
+}
+
+.svg-long-line {
+	.intro & {
+		width: 4px;
+		height: 101px;
+	}
+}

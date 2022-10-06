@@ -1,0 +1,17 @@
+<div class="subscribe">
+	{# class .subscribe__form--error to apply form error states #}
+	{# class .subscribe__form--success to apply form success states #}
+	<form class="subscribe__form">
+		<h2 class="subscribe__upper-title h3">stay in touch</h2>
+		<h3 class="subscribe__title">Subscribe for<br>the latest updates</h3>
+		<div class="subscribe__input">
+			<input type="email" placeholder="Enter email address">
+			<span class="subscribe__error h3">error</span>
+		</div>
+		{{ btn('button', 'subscribe__btn btn btn--dark-greenbtn--dark-green', 'Subscribe') }}
+		<div class="subscribe__success">
+			<h2 class="subscribe__upper-title h3">stay in touch</h2>
+			<h3 class="subscribe__title">You are now subscribed</h3>
+		</div>
+	</form>
+</div>

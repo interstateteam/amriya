@@ -1,0 +1,74 @@
+// Basic styles
+@import "reset";
+@import "main";
+@import "common/fonts";
+@import "vars";
+@import "mixins/general";
+@import "mixins/media";
+// @import "generated/**/*";
+
+// Animations styles
+@import "common/animations";
+
+// Libs
+// @import "../../node_modules/swiper/swiper";
+// @import "../../node_modules/js-datepicker/src/datepicker";
+
+// Common styles
+@import "common/default";
+@import "common/typo";
+@import "common/layout";
+// @import "common/forms";
+@import "common/interaction";
+// @import "common/states";
+
+// Styles for JS-helpers
+// @import "helpers/accordeon";
+// @import "helpers/tabs";
+// @import "helpers/custom-select";
+// @import "helpers/datepicker";
+
+// Blocks styles
+// @import "blocks/header";
+// @import "blocks/menu";
+@import "blocks/cookies";
+// @import "blocks/subscribe";
+// @import "blocks/footer";
+// @import "blocks/booking";
+// @import "blocks/card";
+// @import "blocks/cards-carousel";
+// @import "blocks/imaged-details";
+
+// General pages styles
+// @import "pages/hero-default";
+// @import "pages/hero-level-2";
+// @import "pages/intro";
+// @import "pages/about";
+@import "pages/text";
+
+// UI Elements styles
+// @import "pages/ui-els";
+
+// Home Page styles
+// @import "pages/home/general";
+// @import "pages/home/hero";
+// @import "pages/home/stay";
+// @import "pages/home/rooms";
+// @import "pages/home/slogan";
+// @import "pages/home/dine";
+// @import "pages/home/events";
+// @import "pages/home/instagram";
+
+// Rooms Page styles
+// @import "pages/rooms/rooms";
+// @import "pages/rooms/gallery";
+// @import "pages/rooms/more";
+
+// Room Single Page styles
+// @import "pages/room/hero";
+// @import "pages/room/info";
+// @import "pages/room/full-width";
+// @import "pages/room/other-rooms";
+
+// Contact Page styles
+// @import "pages/contact/contact";

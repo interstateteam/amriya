@@ -1,0 +1,70 @@
+.card {
+	position: relative;
+	@include aspect-ratio(600, 380);
+}
+
+.card__bg {
+	@include absolute-background;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: percentage(374/600);
+		background-image: linear-gradient(180deg, rgba($c-black, 0) 26.83%, rgba($c-black, 0.8) 81.67%);
+		opacity: .7;
+	}
+}
+
+.card__info {
+	position: absolute;
+	left: percentage(40/380);
+	bottom: percentage(47/600);
+	width: percentage(300/380);
+	@include mobile {
+		left: percentage(25/308);
+		bottom: percentage(26/487);
+		width: percentage(255/308);
+	}
+}
+
+.card__title {
+	margin-bottom: 16px;
+	font-family: $font-accent;
+	font-size: 30px;
+	line-height: 1.1;
+	font-weight: 200;
+	@include tabletMaxi {
+		margin-bottom: 14px;
+		font-size: 26px;
+	}
+	@include mobile {
+		margin-bottom: 12px;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		margin-top: 13px;
+		width: 20px;
+		height: 1px;
+		background-color: currentColor;
+		@include tabletMaxi {
+			margin-bottom: 10px;
+		}
+		@include mobile {
+			margin-top: 3px;
+			width: 17px;
+		}
+	}
+}
+
+.card__txt {
+	height: 0;
+	overflow: hidden;
+	font-size: 17px;
+	line-height: (26/17);
+	font-weight: 300;
+}

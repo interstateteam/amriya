@@ -1,0 +1,339 @@
+.menu {
+	position: fixed;
+	z-index: map-get($z-index, menu);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background-color: $c-dark;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity $ease-300;
+}
+
+.menu--opened {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.menu__left,
+.menu__right {
+	position: relative;
+	width: 50%;
+}
+
+.menu__left {
+	padding-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@include upDesktopMaxi {
+		padding-bottom: 72px;
+	}
+	@include lowHeightLaptop {
+		padding-bottom: 20px;
+	}
+	@include tabletMaxi {
+		padding-bottom: 0;
+		justify-content: flex-start;
+	}
+	@include mobile {
+		width: 100%;
+	}
+
+	&::before {
+		@include tabletMaxi {
+			content: "";
+			height: percentage(355/1366);
+		}
+		@include mobile {
+			height: percentage(197/896);
+		}
+	}
+}
+
+.menu__right {
+	@include mobile {
+		display: none;
+	}
+}
+
+.menu__bg {
+	@include absolute-background;
+	opacity: .3;
+}
+
+.menu__main-list {
+	position: relative;
+	z-index: 10;
+	width: percentage(460/810);
+	counter-reset: menuList;
+	@include miniLaptop {
+		width: 65%;
+	}
+	@include tabletMaxi {
+		width: 63%;
+	}
+	@include mobile {
+		width: calc(100% - 80px);
+	}
+
+	li {
+		&:not(:last-child) {
+			margin-bottom: 33px;
+			@include upDesktopMaxi {
+				margin-bottom: 55px;
+			}
+			@include lowHeightLaptop {
+				margin-bottom: 25px;
+			}
+			@include tabletMaxi {
+				margin-bottom: 28px;
+			}
+		}
+	}
+}
+
+.menu__link {
+	display: flex;
+	align-items: flex-start;
+	font-family: $font-accent;
+	font-size: 52px;
+	line-height: 1.1;
+	font-weight: 400;
+	opacity: .5;
+	transition: opacity $head-trans;
+	@include upDesktopMaxi {
+		font-size: 80px;
+	}
+	@include lowHeightLaptop {
+		font-size: 40px;
+	}
+	@include tabletMaxi {
+		font-weight: 200;
+	}
+	@include mobile {
+		font-size: 42px;
+	}
+
+	&::before {
+		content: '0' counter(menuList) '.';
+		counter-increment: menuList;
+		display: inline-block;
+		margin-top: 2px;
+		margin-right: 37px;
+		width: 60px;
+		border-top: 1px solid currentColor;
+		padding-top: 15px;
+		font-family: $font-default;
+		font-size: 17px;
+		line-height: 1.1;
+		font-weight: 400;
+		@include upDesktopMaxi {
+			margin-right: 60px;
+			width: 93px;
+			padding-top: 25px;
+			font-size: 27px;
+		}
+		@include lowHeightLaptop {
+			margin-right: 28px;
+			width: 50px;
+			font-size: 14px;
+		}
+		@include tabletMaxi {
+			margin-top: 13px;
+			margin-right: 20px;
+			width: 30px;
+		}
+		@include mobile {
+			font-size: 15px;
+		}
+	}
+
+	@include hover {
+		opacity: 1;
+	}
+}
+
+.menu__link--active {
+	opacity: 1;
+}
+
+.menu__sub-list {
+	position: absolute;
+	left: 50%;
+	top: calc(50% - 40px);
+	transform: translate(-50%, -50%);
+	width: percentage(410/810);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity $head-trans;
+	@include upDesktopMaxi {
+		top: calc(50% - 60px);
+	}
+	@include lowHeightLaptop {
+		top: calc(50% - 20px);
+	}
+	@include miniLaptop {
+		width: 60%;
+	}
+	@include tabletMaxi {
+		top: percentage(362/1366);
+		transform: translate(-50%, 0);
+		width: percentage(338/512);
+	}
+	@include tablet {
+		width: 70%;
+	}
+	@include mobile {
+		position: static;
+		transform: none;
+		width: 100%;
+		// padding-top: 21px;
+		padding-left: 48px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	&::before {
+		@include mobile {
+			content: "";
+			display: block;
+			height: 21px;
+		}
+	}
+
+	li {
+		&:not(:last-child) {
+			margin-bottom: 22px;
+			@include upDesktopMaxi {
+				margin-bottom: 33px;
+			}
+			@include lowHeightLaptop {
+				margin-bottom: 18px;
+			}
+			@include tabletMaxi {
+				margin-bottom: 16px;
+			}
+			@include mobile {
+				margin-bottom: 12px;
+			}
+		}
+	}
+}
+
+.menu__sub-list--mobile {
+	height: 0;
+	overflow: hidden;
+	@include upTablet {
+		display: none;
+	}
+}
+
+.menu__sub-list--active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.menu__sublink {
+	font-family: $font-accent;
+	font-size: 36px;
+	line-height: 1.1;
+	font-weight: 400;
+	@include upDesktopMaxi {
+		font-size: 56px;
+	}
+	@include lowHeightLaptop {
+		font-size: 29px;
+	}
+	@include tabletMaxi {
+		font-size: 34px;
+		font-weight: 200;
+	}
+	@include tablet {
+		font-size: 30px;
+	}
+	@include mobile {
+		font-size: 24px;
+	}
+}
+
+.menu__footer {
+	position: absolute;
+	left: 0;
+	bottom: 66px;
+	padding: 0 60px;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 16px;
+	line-height: 1.1;
+	font-weight: 300;
+	color: $c-white;
+	@include upDesktopMaxi {
+		bottom: 104px;
+		padding: 0 96px;
+		font-size: 25px;
+	}
+	@include desktopMini {
+		padding: 0 30px;
+	}
+	@include lowHeightLaptop {
+		bottom: 32px;
+	}
+	@include tabletMaxi {
+		bottom: 40px;
+		padding: 0 37px;
+	}
+	@include mobile {
+		display: none;
+	}
+}
+
+.menu__address {
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin-right: 18px;
+		width: 14px;
+		height: 18px;
+		fill: $c-beige;
+		@include upDesktopMaxi {
+			margin-right: 27px;
+			width: 28px;
+			height: 28px;
+		}
+	}
+
+	span {
+		opacity: .8;
+	}
+}
+
+.menu__socials {
+	display: flex;
+	text-transform: uppercase;
+	@include tabletMaxi {
+		display: none;
+	}
+
+	&:not(:first-child) {
+		margin-left: 62px;
+		@include upDesktopMaxi {
+			margin-left: 97px;
+		}
+		@include desktopMini {
+			margin-left: 32px;
+		}
+	}
+}
+
+.menu__social-link {
+	opacity: .8;
+
+	&:not(:last-child) {
+		margin-right: 19px;
+	}
+}

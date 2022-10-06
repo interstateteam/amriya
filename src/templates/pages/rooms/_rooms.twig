@@ -1,0 +1,15 @@
+<div class="rooms">
+	<div class="rooms__container">
+		<span class="rooms__decor-text">Relax</span>
+		{{ h2('OUR ROOMS', 'rooms__label') }}
+		<div class="rooms__overview">
+			{% set roomsOverview = [
+				'Pool View Guestroom', 'Executive', 'Pool View Guestroom Executive'
+			] %}
+			{% for title in roomsOverview %}
+				{% set imagedDetailsTitle = title %}
+				{% include 'blocks/_imaged-details.twig' %}
+			{% endfor %}
+		</div>
+	</div>
+</div>

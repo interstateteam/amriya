@@ -1,0 +1,8 @@
+<svg class="burger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px"
+	 width="30px" height="13.5px" viewBox="0 0 30 13.5" enable-background="new 0 0 30 13.5" xml:space="preserve">
+	<rect class="burger__top" width="30" height="1.5"/>
+	<rect class="burger__center-right" x="18" y="6" width="12" height="1.5"/>
+	<rect class="burger__center-left" y="6" width="12" height="1.5"/>
+	<rect class="burger__bottom" y="12" width="30" height="1.5"/>
+</svg>

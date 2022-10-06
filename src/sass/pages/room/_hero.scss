@@ -1,0 +1,173 @@
+.room-hero {
+	position: relative;
+}
+
+.room-hero__slider {
+	height: vh(1000/980);
+	@include tabletMaxi {
+		height: vh(740/1366);
+	}
+	@include mobile {
+		height: 100vh;
+	}
+}
+
+.room-hero__photo {
+	position: relative;
+	background-color: $c-black;
+	transition-property: opacity;
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+		opacity: .68;
+	}
+}
+
+$wrap-room-desk: 130px;
+$wrap-room-tab: 82px;
+
+.room-hero__wrapper {
+	@include absolute-full-width;
+	z-index: 100;
+	padding: 0 $wrap-room-desk;
+	@include tabletMaxi {
+		padding: 0 $wrap-room-tab;
+	}
+	@include mobile {
+		padding: 0 $wrap-mob-md;
+	}
+}
+
+.room-hero__container {
+	@extend %container;
+	max-width: 1360px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	@include mobile {
+		justify-content: space-between;
+
+		&::before {
+			content: "";
+			margin-bottom: 50px;
+		}
+	}
+}
+
+.room-hero__title {
+	font-family: $font-accent;
+	font-size: 140px;
+	font-weight: 200;
+	@include tabletMaxi {
+		font-size: 130px;
+	}
+	@include tablet {
+		font-size: 90px;
+	}
+	@include mobile {
+		text-align: center;
+		font-size: 74px;
+	}
+}
+
+.room-hero__pagination {
+	@extend %container;
+	margin-top: 69px;
+	margin-bottom: 56px;
+	max-width: 1136px;
+	display: flex;
+	@include tabletMaxi {
+		margin-top: 48px;
+		margin-bottom: 19px;
+	}
+	@include mobile {
+		margin-top: 0;
+		margin-bottom: 66px;
+	}
+}
+
+.room-hero__page {
+	position: relative;
+	flex-basis: 100%;
+	font-family: $font-accent;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 400;
+	cursor: pointer;
+	@include tabletMaxi {
+		font-size: 16px;
+	}
+	@include mobile {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	@include mobileMicro {
+		font-size: 14px;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		margin-bottom: 25px;
+		height: 6px;
+		border: 1px solid currentColor;
+		@include tabletMaxi {
+			margin-bottom: 17px;
+		}
+		@include mobile {
+			margin-bottom: 0;
+			margin-top: 18px;
+			height: 4px;
+		}
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 6px;
+		background-color: currentColor;
+		transform: scaleX(0);
+		transform-origin: left center;
+		@include mobile {
+			top: auto;
+			bottom: 0;
+			height: 4px;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-right: 38px;
+		@include tabletMaxi {
+			margin-right: 19px;
+		}
+		@include mobile {
+			margin-right: 13px;
+		}
+	}
+}
+
+.room-hero__page--active-first {
+	&::after {
+		animation: fillLine 5s linear;
+	}
+}
+
+.room-hero__page--active {
+	&::after {
+		animation: fillLine 5.6s linear;
+	}
+}
+
+@keyframes fillLine {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}

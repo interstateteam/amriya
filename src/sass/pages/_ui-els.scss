@@ -1,0 +1,102 @@
+.ui-els {
+	position: relative;
+	padding-top: 260px;
+	@include upDesktopMaxi {
+		padding-top: 340px;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 260px;
+		background-color: $c-green;
+		@include upDesktopMaxi {
+			padding-top: 340px;
+		}
+	}
+}
+
+.ui-els__container {
+	@extend %container;
+	max-width: $container;
+}
+
+.ui-els__section {
+	padding: 100px $wrap-desk-md;
+	@include tabletMaxi {
+		padding: 100px $wrap-tab-md;
+	}
+	@include mobile {
+		padding: 100px $wrap-mob-md;
+	}
+
+	&:not(:first-child) {
+		padding-top: 80px;
+	}
+
+	&:not(:last-child) {
+		padding-bottom: 80px;
+	}
+}
+
+.ui-els__section--light {
+	background-color: $c-beige;
+	color: $c-dark;
+}
+
+.ui-els__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 50px;
+	@include tabletMaxi {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include mobile {
+		grid-template-columns: 1fr;
+	}
+}
+
+.ui-els__flex {
+	margin-bottom: -40px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ui-els__title {
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.ui-els__elem {
+	&:not(:last-child) {
+		margin-bottom: 40px;
+	}
+}
+
+.ui-els__flex-elem {
+	margin-right: 50px;
+	margin-bottom: 40px;
+}
+
+.ui-els__flex-elem--wide {
+	width: 400px;
+}
+
+.ui-els__form {
+	@extend %container;
+	max-width: 940px;
+
+	&:not(:last-child) {
+		margin-bottom: 80px;
+	}
+
+	#{$input-txt} {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+}

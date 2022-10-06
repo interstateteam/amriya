@@ -1,0 +1,20 @@
+<div class="imaged-details">
+	<div class="imaged-details__gallery js-imaged-details-gallery swiper">
+		<div class="swiper-wrapper">
+			{% for i in range(1, 4) %}
+				<div class="imaged-details__photo swiper-slide">
+					<img src="img/imaged-details-photo-{{i}}.jpg" alt="">
+				</div>
+			{% endfor %}
+		</div>
+		{{ nav('imaged-details__nav slider-nav--dark') }}
+	</div>
+	<div class="imaged-details__info">
+		<h3 class="imaged-details__upper-title h3">OUR ROOMS</h3>
+		<h4 class="imaged-details__title">{{ imagedDetailsTitle }}</h4>
+		<div class="imaged-details__txt txt-1">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus ex vitae risus volutpat volutpat. Pellentesque dictum convallis neque.</p>
+		</div>
+		{{ btn('a', 'imaged-details__link link', 'Explore More', 'room-single.html') }}
+	</div>
+</div>

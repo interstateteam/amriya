@@ -1,0 +1,95 @@
+.hero-level-2 {
+	position: relative;
+	z-index: 100;
+	background-color: rgba($c-white, .05);
+}
+
+.hero-level-2__container {
+	@extend %container;
+	position: relative;
+	max-width: 1920px;
+	height: 100vh;
+	padding-left: $wrap-desk-md;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	@include tabletMaxi {
+		height: vw(640/1024);
+		padding-left: $wrap-tab-md;
+	}
+	@include tablet {
+		height: vw(560/768);
+	}
+	@include mobile {
+		height: vw(570/414);
+		padding-left: $wrap-mob-md;
+	}
+
+	&::after {
+		content: "";
+		height: percentage(355/980);
+		@include tabletMaxi {
+			height: percentage(166/640);
+		}
+		@include mobile {
+			height: percentage(149/570);
+		}
+	}
+}
+
+.hero-level-2__title {
+	position: relative;
+	z-index: 50;
+	font-family: $font-accent;
+	font-size: 300px;
+	line-height: 1.1;
+	font-weight: 200;
+	@include lowHeightLaptop {
+		font-size: 210px;
+	}
+	@include tabletMaxi {
+		font-size: 210px;
+	}
+	@include tablet {
+		font-size: 160px;
+	}
+	@include mobile {
+		font-size: 100px;
+	}
+}
+
+.hero-level-2__scroll-to {
+	position: absolute;
+	left: 90px;
+	bottom: 80px;
+	@include lowHeightLaptop {
+		bottom: 40px;
+	}
+	@include tabletMaxi {
+		display: none !important;
+	}
+}
+
+.hero-level-2__photo {
+	position: absolute;
+	right: 0;
+	top: percentage(486/980);
+	width: percentage(1280/1620);
+	height: vh(940/980);
+	opacity: .74;
+	@include tabletMaxi {
+		top: percentage(380/640);
+		width: percentage(837/1024);
+		height: vw(560/1024);
+	}
+	@include mobile {
+		top: percentage(390/570);
+		width: calc(100% - #{$wrap-mob-md});
+		height: vw(330/414);
+	}
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}

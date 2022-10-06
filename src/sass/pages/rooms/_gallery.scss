@@ -1,0 +1,72 @@
+.rooms-gallery {
+	overflow: hidden;
+	padding-top: 201px;
+	padding-bottom: 223px;
+	@include tabletMaxi {
+		padding-top: 100px;
+		padding-bottom: 158px;
+	}
+	@include mobile {
+		padding-top: 124px;
+		padding-bottom: 171px;
+	}
+}
+
+.rooms-gallery__wrapper {
+	padding: 0 $wrap-desk-md;
+	@include tabletMaxi {
+		padding: 0 $wrap-tab-lg;
+	}
+	@include mobile {
+		padding: 0 $wrap-mob-md;
+	}
+}
+
+.rooms-gallery__container {
+	@extend %container;
+	position: relative;
+	max-width: 1420px;
+}
+
+.rooms-gallery__decor-text {
+	position: absolute;
+	z-index: 30;
+	left: percentage(68/1420);
+	top: -291px;
+	opacity: .06;
+	font-family: $font-accent;
+	font-size: 380px;
+	line-height: 1.325;
+	font-weight: 200;
+	@include tabletMaxi {
+		left: percentage(70/814);
+		top: -85px;
+		font-size: 320px;
+	}
+	@include mobile {
+		left: -$wrap-mob-md;
+		top: -182px;
+		font-size: 220px;
+	}
+}
+
+.rooms-gallery {
+	.svg-logo-plant {
+		position: absolute;
+		z-index: 10;
+		left: percentage(-785/1420);
+		top: -99px;
+		max-width: none;
+		width: percentage(1337/1420);
+		transform: rotate(10deg);
+		opacity: 0.03;
+		@include tabletMaxi {
+			left: percentage(-406/814);
+			top: 210px;
+			width: percentage(865/814);
+		}
+		@include mobile {
+			display: none;
+		}
+	}
+}

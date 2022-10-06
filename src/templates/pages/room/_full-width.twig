@@ -1,0 +1,13 @@
+<div class="full-width js-full-width-gallery swiper">
+	<div class="swiper-wrapper">
+		{% set roomSlides = [
+			'room-full-width-photo', 'room-hero-bg', 'home-stay-5', '404-hero-bg', 'home-hero-bg', 'faqs-hero-bg'
+		] %}
+		{% for slide in roomSlides %}
+			<div class="full-width__photo swiper-slide">
+				<img src="img/{{ slide }}.jpg" alt="">
+			</div>
+		{% endfor %}
+	</div>
+	{{ nav('full-width__nav slider-nav--light') }}
+</div>

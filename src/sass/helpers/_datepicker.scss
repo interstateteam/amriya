@@ -1,0 +1,135 @@
+.qs-datepicker-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	transform: none;
+	pointer-events: none;
+	border-radius: 0;
+	border: 1px solid $c-beige;
+	background: #50533B;
+	color: $c-white;
+}
+
+.qs-controls {
+	padding-top: 17px;
+	background-color: transparent;
+	color: $c-beige;
+	@include tabletMaxi {
+		padding-top: 23px;
+	}
+}
+
+.qs-month-year {
+	font-family: $font-accent;
+	font-size: 16px;
+	font-weight: 200;
+	text-transform: uppercase;
+
+	&:hover {
+		border: none;
+	}
+}
+
+.qs-month {
+	padding: 0;
+}
+
+.qs-arrow {
+	width: auto;
+	height: auto;
+	padding: 8px percentage(20/298);
+
+	&::after {
+		display: none;
+	}
+
+	svg {
+		width: 7px;
+		height: 12px;
+		pointer-events: none;
+		@include tabletMaxi {
+			width: 10px;
+			height: 16px;
+		}
+	}
+}
+
+.qs-left {
+	margin-left: percentage(10/298);
+}
+
+.qs-right {
+	margin-right: percentage(14/298);
+}
+
+.qs-year,
+.qs-day {
+	display: none;
+}
+
+.qs-squares {
+	padding: 15px percentage(20/298) 18px percentage(18/298);
+	@include tabletMaxi {
+		padding-top: 23px;
+		padding-bottom: 30px;
+	}
+	@include mobile {
+		padding-top: 18px;
+		padding-bottom: 28px;
+	}
+}
+
+.qs-square {
+	height: 30px;
+	@include tabletMaxi {
+		height: 40px;
+	}
+	@include mobile {
+		height: 37px;
+	}
+}
+
+.qs-num {
+	font-family: $font-default;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.qs-outside-current-month {
+	opacity: .4;
+}
+
+.qs-current {
+	text-decoration: none;
+}
+
+.qs-active,
+.qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
+	position: relative;
+	background-color: transparent;
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		left: calc(50% - 15px);
+		top: calc(50% - 15px);
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: $c-green;
+		@include tabletMaxi {
+			left: calc(50% - 20px);
+			top: calc(50% - 20px);
+			width: 40px;
+			height: 40px;
+		}
+		@include mobile {
+			left: calc(50% - 16.5px);
+			top: calc(50% - 16.5px);
+			width: 37px;
+			height: 37px;
+		}
+	}
+}

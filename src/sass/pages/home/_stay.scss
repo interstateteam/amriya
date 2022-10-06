@@ -1,0 +1,139 @@
+.home-stay {
+	padding: 0 $wrap-desk-sm 260px;
+	@include tabletMaxi {
+		padding: 0 $wrap-tab-sm 263px;
+	}
+	@include mobile {
+		padding: 0 $wrap-mob-sm 133px;
+	}
+}
+
+.home-stay__container {
+	@extend %container;
+	position: relative;
+	max-width: 1460px;
+}
+
+.home-stay__info {
+	position: relative;
+	z-index: 50;
+}
+
+.home-stay__label {
+	margin-left: 80px;
+	margin-bottom: 21px;
+	@include tabletMaxi {
+		margin-left: 84px;
+		margin-bottom: 18px;
+	}
+	@include mobile {
+		margin-left: 28px;
+		margin-bottom: 24px;
+	}
+}
+
+.home-stay__title {
+	margin-bottom: 62px;
+	line-height: (139/160);
+	@include tabletMaxi {
+		margin-bottom: 55px;
+		line-height: (110/110);
+	}
+	@include mobile {
+		margin-bottom: 45px;
+		padding: 0 ($wrap-mob-md / 2);
+	}
+
+	span {
+		display: block;
+
+		&:nth-child(2n) {
+			text-indent: percentage(340/1460);
+			@include tabletMaxi {
+				text-indent: percentage(252/984);
+			}
+			@include mobile {
+				text-indent: percentage(109/394);
+			}
+		}
+	}
+}
+
+.home-stay__details {
+	margin-left: percentage(820/1460);
+	width: percentage(460/1460);
+	@include tabletMaxi {
+		margin-left: percentage(565/984);
+		width: percentage(355/984);
+	}
+	@include mobile {
+		margin-left: 0;
+		width: 100%;
+		padding: 0 $wrap-mob-md;
+	}
+}
+
+.home-stay__desription {
+	margin-bottom: 62px;
+	border-top: 1px solid rgba($c-beige, .2);
+	padding-top: 30px;
+	text-indent: percentage(47/460);
+	@include tabletMaxi {
+		margin-bottom: 46px;
+	}
+	@include mobile {
+		margin-bottom: 27px;
+		border-top: none;
+		padding-top: 0;
+		text-indent: 0;
+	}
+}
+
+[class*=home-stay__img] {
+	position: absolute;
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+		opacity: .7;
+		@include mobile {
+			opacity: .34;
+		}
+	}
+}
+
+.home-stay__img-top {
+	right: percentage(80/1460);
+	top: -144px;
+	width: percentage(240/1460);
+	@include aspect-ratio(310, 240);
+	@include tabletMaxi {
+		right: percentage(64/984);
+		top: -148px;
+		width: percentage(251/984);
+	}
+	@include mobile {
+		right: $wrap-mob-md;
+		top: -91px;
+		width: percentage(177/414);
+	}
+}
+
+.home-stay__img-bottom {
+	left: percentage(100/1460);
+	top: 153px;
+	width: percentage(460/1460);
+	@include aspect-ratio(623, 460);
+	@include tabletMaxi {
+		left: -$wrap-tab-sm;
+		top: 128px;
+		width: percentage(502/984);
+		@include aspect-ratio(607, 502);
+	}
+	@include mobile {
+		left: percentage(-55/414);
+		top: 223px;
+		width: percentage(252/414);
+		@include aspect-ratio(280, 252);
+	}
+}

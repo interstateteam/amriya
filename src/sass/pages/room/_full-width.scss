@@ -1,0 +1,37 @@
+.full-width__photo {
+	position: relative;
+	@include aspect-ratio(880, 1620);
+	transition-property: opacity;
+	background-color: $c-dark;
+	@include tabletMaxi {
+		@include aspect-ratio(700, 1024);
+	}
+	@include mobile {
+		@include aspect-ratio(560, 414);
+	}
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+		opacity: .8;
+	}
+}
+
+.full-width__nav {
+	position: absolute;
+	z-index: 100;
+	left: 0;
+	bottom: 0;
+	width: 151px;
+	height: 90px;
+	padding-left: 10px;
+	@include tabletMaxi {
+		width: 148px;
+		height: 80px;
+		padding-left: 0;
+	}
+
+	.slider-nav__pag {
+		margin: 0 15px;
+	}
+}

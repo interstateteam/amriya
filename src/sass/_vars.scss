@@ -1,0 +1,62 @@
+// breakpoints (desktop first)
+$b-mobile-micro: 400px;
+$b-mobile-mini: 479px;
+$b-mobile-midi: 639px;
+$b-mobile: 767px;
+$b-tablet: 894px;
+$b-tablet-maxi: 1054px;
+$b-laptop-mini: 1299px;
+$b-laptop: 1439px;
+$b-desktop-mini: 1519px;
+$b-desktop: 1899px;
+$b-desktop-maxi: 2239px;
+
+//fonts
+$font-default: 'Altform', helvetica, tahoma, arial, sans-serif;
+$font-accent: 'Woodland', 'Times New Roman', serif;
+
+//colors
+$c-black: #000000;
+$c-white: #FFFFFF;
+$c-dark: #1D1D13;
+$c-beige: #fff;
+$c-accent: #F3FF02;
+$c-error: #FF0606;
+$c-light-green: #919078;
+$c-green: #636649;
+$c-dark-green: #343C18;
+
+// timing
+$ease-200: 200ms ease-out;
+$ease-300: 300ms ease-out;
+$ease-400: 400ms ease-out;
+$ease-500: 500ms ease-out;
+$ease-600: 600ms ease-out;
+
+// layout
+$container: 1420px;
+$wrap-desk-lg: 180px;
+$wrap-desk-md: 100px;
+$wrap-desk-sm: 80px;
+$wrap-tab-lg: 105px;
+$wrap-tab-md: 85px;
+$wrap-tab-sm: 20px;
+$wrap-mob-md: 20px;
+$wrap-mob-sm: 0;
+
+// tags
+$h: "h1, h2, h3, h4, h5, h6";
+$input-txt: 'input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], textarea';
+
+// z-index
+$z-index: (
+	cursor    : 100000000,
+	modal     : 1200,
+	overlay   : 1100,
+	header    : 1000,
+	bookModal : 900,
+	bookBtn   : 800,
+	menu      : 700,
+	dropdown  : 500,
+	section   : 50
+);

@@ -1,0 +1,18 @@
+---
+title: Terms of Service Page
+description: Terms of Service
+pageName: TermsofService
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+	<main>
+		{% set heroTitle = 'Terms of Service' %}
+		{# {% set heroPhoto = 'privacy-hero-bg' %} #}
+		{# {% set heroClass = 'hero-default--privacy' %} #}
+		{% include 'pages/_hero-default.twig' %}
+		{% include 'pages/_text.twig' %}
+	</main>
+{% include 'blocks/_footer.twig' %}
+{% endblock %}
+

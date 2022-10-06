@@ -1,0 +1,142 @@
+.subscribe {
+	padding: 106px $wrap-desk-md 123px;
+	background-color: $c-white;
+	color: $c-dark-green;
+	@include tabletMaxi {
+		padding: 90px $wrap-tab-md 86px;
+	}
+	@include mobile {
+		padding: 83px $wrap-mob-md 114px;
+	}
+}
+
+.subscribe__form {
+	@extend %container;
+	position: relative;
+	max-width: 620px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.subscribe__upper-title {
+	margin-bottom: 19px;
+	color: $c-green;
+	@include onlyTabletMaxi {
+		font-size: 15px;
+	}
+}
+
+.subscribe__title {
+	margin-bottom: 8px;
+	font-family: $font-accent;
+	font-size: 50px;
+	line-height: (51/50);
+	font-weight: 200;
+	@include tabletMaxi {
+		margin-bottom: -1px;
+		font-size: 52px;
+		line-height: (53/52);
+	}
+	@include mobile {
+		margin-bottom: 22px;
+		font-size: 42px;
+		line-height: (43/42);
+	}
+}
+
+.subscribe__input {
+	position: relative;
+	margin-bottom: 36px;
+	max-width: 460px;
+	@include tabletMaxi {
+		margin-bottom: 33px;
+		max-width: 410px;
+	}
+	@include mobile {
+		margin-bottom: 53px;
+		max-width: 300px;
+	}
+
+	input {
+		height: 83px;
+		border: none;
+		border-bottom: 1px dashed currentColor;
+		text-align: center;
+		font-size: 30px;
+		text-transform: none;
+		transition: color $ease-200;
+		@include tabletMaxi {
+			height: 86px;
+			font-size: 34px;
+		}
+		@include mobile {
+			height: 59px;
+			font-size: 24px;
+		}
+
+		&::placeholder {
+			color: rgba($c-dark-green, .4);
+			transition: color $ease-200;
+		}
+	}
+}
+
+.subscribe__error {
+	position: absolute;
+	left: 50%;
+	top: calc(100% + 8px);
+	transform: translateX(-50%);
+	opacity: 0;
+	color: $c-error;
+	pointer-events: none;
+	transition: opacity $ease-200;
+	@include mobile {
+		top: calc(100% + 16px);
+	}
+}
+
+.subscribe__success {
+	position: absolute;
+	z-index: 50;
+	left: -$wrap-mob-md;
+	top: -$wrap-mob-md;
+	width: calc(100% + #{$wrap-mob-md * 2});
+	height: calc(100% + #{$wrap-mob-md * 2});
+	padding-bottom: 22px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $c-white;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity $ease-300;
+	@include mobile {
+		padding-bottom: 0;
+	}
+}
+
+.subscribe__form--error {
+	.subscribe__input {
+		input {
+			color: $c-error;
+
+			&::placeholder {
+				color: rgba($c-error, .4);
+			}
+		}
+	}
+
+	.subscribe__error {
+		opacity: 1;
+	}
+}
+
+.subscribe__form--success {
+	.subscribe__success {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}

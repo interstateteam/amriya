@@ -1,0 +1,119 @@
+.h1 {
+	font-family: $font-accent;
+	font-size: 160px;
+	line-height: (168/160);
+	font-weight: 200;
+	@include desktopMini {
+		font-size: vw(160/1520);
+	}
+	@include tabletMaxi {
+		font-size: 110px;
+	}
+	@include tablet {
+		font-size: 82px;
+	}
+	@include mobile {
+		font-size: 46px;
+	}
+	@include mobileMicro {
+		font-size: 40px;
+	}
+}
+
+.h2 {
+	display: flex;
+	align-items: center;
+	font-family: $font-accent;
+	font-size: 34px;
+	line-height: 1.1;
+	font-weight: 200;
+	text-transform: uppercase;
+	@include mobile {
+		font-size: 23px;
+		font-weight: 200;
+	}
+
+	svg {
+		margin-right: 9px;
+		flex: none;
+		width: 25px;
+		height: 26px;
+		fill: currentColor;
+		@include tabletMaxi {
+			margin-right: 6px;
+		}
+		@include mobile {
+			margin-right: 7px;
+		}
+	}
+}
+
+.h3 {
+	font-size: 17px;
+	line-height: 1.1;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+%txt {
+	font-weight: 300;
+
+	p, ul, ol, li {
+		&:not(:last-child) {
+			margin-bottom: 1em;
+		}
+	}
+
+	b, strong {
+		font-weight: 700;
+	}
+
+	i, em {
+		font-style: italic;
+	}
+
+	a {
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.txt-1 {
+	@extend %txt;
+	font-size: 22px;
+	line-height: (32/22);
+	@include tabletMaxi {
+		font-size: 20px;
+		line-height: (32/20);
+	}
+	@include mobile {
+		font-size: 18px;
+		line-height: (30/18);
+	}
+}
+
+.txt-2 {
+	@extend %txt;
+	font-size: 20px;
+	line-height: (35/20);
+	@include tabletMaxi {
+		font-size: 18px;
+		line-height: (32/18);
+	}
+	@include mobile {
+		line-height: (30/18);
+	}
+}
+
+.txt-3 {
+	@extend %txt;
+	font-size: 22px;
+	line-height: (32/22);
+	@include onlyTabletMaxi {
+		font-size: 18px;
+		line-height: (28/18);
+	}
+}

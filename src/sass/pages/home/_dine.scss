@@ -1,0 +1,262 @@
+.home-dine {
+	position: relative;
+	z-index: map-get($z-index, section);
+	padding: 150px $wrap-desk-sm 357px;
+	background-color: $c-light-green;
+	@include tabletMaxi {
+		padding: 150px $wrap-tab-sm #{vw(410/1024)};
+	}
+	@include mobile {
+		padding: 118px $wrap-mob-md 357px;
+	}
+}
+
+.home-dine__container {
+	@extend %container;
+	position: relative;
+	max-width: 1460px;
+}
+
+.home-dine__content {
+	position: relative;
+	z-index: 50;
+}
+
+.home-dine__details {
+	position: relative;
+	margin-left: percentage(820/1460);
+	margin-bottom: 81px;
+	width: percentage(460/1460);
+	@include tabletMaxi {
+		margin-left: percentage(500/984);
+		margin-bottom: 72px;
+		width: percentage(354/984);
+	}
+	@include tablet {
+		margin-left: 44%;
+		width: 49%;
+	}
+	@include mobile {
+		margin-left: 0;
+		margin-bottom: 24px;
+		width: auto;
+	}
+}
+
+.home-dine__label {
+	position: absolute;
+	left: percentage(537/460);
+	top: -12px;
+	@include tabletMaxi {
+		left: percentage(315/354);
+		top: auto;
+		bottom: calc(100% + 25px);
+	}
+	@include tablet {
+		left: 76%;
+	}
+	@include mobile {
+		position: static;
+	}
+}
+
+.home-dine__description {
+	margin-bottom: 30px;
+	text-indent: percentage(46/460);
+	@include tabletMaxi {
+		margin-bottom: 13px;
+	}
+	@include mobile {
+		margin-bottom: 43px;
+		text-indent: 0;
+	}
+}
+
+.home-dine__link {
+	@include mobile {
+		margin-left: 10px;
+	}
+}
+
+.home-dine__title {
+	position: relative;
+	z-index: 30;
+	margin-left: auto;
+	margin-right: -13px;
+	margin-bottom: 73px;
+	width: percentage(1395/1460);
+	line-height: (142/160);
+	@include media($b-tablet-maxi+1px, $b-desktop-mini) {
+		font-size: vw(136/1440);
+	}
+	@include tabletMaxi {
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 82px;
+		width: auto;
+		line-height: (107/110);
+	}
+	@include mobile {
+		margin-left: -10px;
+		margin-right: -13px;
+		margin-bottom: 40px;
+		line-height: (48/46);
+	}
+
+	span {
+		display: block;
+
+		&:nth-child(2n-1) {
+			text-indent: percentage(307/1395);
+			@include tabletMaxi {
+				text-indent: percentage(188/984);
+			}
+			@include mobile {
+				text-indent: 0;
+			}
+		}
+
+		&:nth-child(2n) {
+			@include mobile {
+				text-indent: percentage(64/397);
+			}
+		}
+	}
+}
+
+.home-dine__items {
+	position: relative;
+	z-index: 20;
+	margin-left: percentage(180/1460);
+	width: 540px;
+	max-width: 100%;
+	font-family: $font-accent;
+	font-size: 50px;
+	line-height: (64/50);
+	font-weight: 200;
+	@include tabletMaxi {
+		margin-left: percentage(85/984);
+		font-size: 60px;
+		line-height: (64/60);
+	}
+	@include mobile {
+		margin-left: 0;
+		margin-bottom: 24px;
+		font-size: 44px;
+		line-height: (56/44);
+	}
+}
+
+.home-dine__item {
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin-right: 0;
+		width: 0;
+		height: 30px;
+		transition: width $ease-300, margin $ease-300;
+	}
+
+	@mixin visibleSVG {
+		svg {
+			margin-right: 18px;
+			width: 55px;
+			@include tabletMaxi {
+				margin-right: 31px;
+			}
+			@include mobile {
+				margin-right: 22px;
+				width: 52px;
+			}
+		}
+	}
+
+	@include hover {
+		@include visibleSVG;
+	}
+
+	&.home-dine__item--active {
+		@include visibleSVG;
+	}
+}
+
+.home-dine__images {
+	position: absolute;
+	right: percentage(100/1460);
+	bottom: -195px;
+	width: percentage(540/1460);
+	@include tabletMaxi {
+		right: -$wrap-tab-sm;
+		bottom: vw(-322/1024);
+		width: vw(586/1024);
+	}
+	@include mobile {
+		right: -$wrap-mob-md;
+		bottom: auto;
+		top: calc(100% + 35px);
+		width: calc(100% + #{$wrap-mob-md});
+	}
+}
+
+.home-dine__img {
+	position: relative;
+	@include aspect-ratio(660, 540);
+	transition-property: opacity;
+	@include tabletMaxi {
+		@include aspect-ratio(640, 586);
+	}
+	@include mobile {
+		@include aspect-ratio(420, 394);
+	}
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}
+
+[class*=home-dine__photo] {
+	position: absolute;
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}
+
+.home-dine__photo-top {
+	left: percentage(20/1460);
+	top: -230px;
+	width: percentage(300/1460);
+	@include aspect-ratio(403, 300);
+	@include tabletMaxi {
+		left: percentage(84/984);
+		top: -210px;
+		width: percentage(231/984);
+		@include aspect-ratio(310, 231);
+	}
+	@include mobile {
+		left: auto;
+		right: 0;
+		top: -206px;
+		width: percentage(177/374);
+		@include aspect-ratio(238, 177);
+	}
+}
+
+.home-dine__photo-bottom {
+	left: percentage(180/1460);
+	bottom: -432px;
+	width: percentage(220/1460);
+	@include aspect-ratio(290, 220);
+	@include tabletMaxi {
+		left: percentage(84/984);
+		bottom: vw(-481/1024);
+		width: percentage(231/984);
+		@include aspect-ratio(303, 231);
+	}
+	@include mobile {
+		display: none;
+	}
+}

@@ -1,0 +1,36 @@
+<div class="other-rooms js-other-rooms-wrapper">
+	{% set otherRooms = [
+		{ title: 'Courtyard Guestroom',
+		  bg: 'room-links-photo' },
+		{ title: 'Courtyard Guestroom 2',
+		  bg: 'room-full-width-photo'},
+		{ title: 'Courtyard Guestroom 3',
+		  bg: 'room-hero-bg'},
+		{ title: 'Courtyard Guestroom 4',
+		  bg: '404-hero-bg'},
+		{ title: 'Courtyard Guestroom 5',
+		  bg: 'home-stay-5'}
+	] %}
+	<div class="other-rooms__bg js-other-rooms-bg swiper">
+		<div class="swiper-wrapper">
+			{% for room in otherRooms %}
+				<div class="other-rooms__photo swiper-slide">
+					<img src="img/{{ room.bg }}.jpg" alt="">
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="other-rooms__links js-other-rooms-links swiper">
+		<div class="swiper-wrapper">
+			{% for room in otherRooms %}
+				<div class="other-rooms__info swiper-slide">
+					<h3 class="other-rooms__title">{{ room.title }}</h3>
+					<p class="other-rooms__details">2 people / 45 m² + Terrace</p>
+					{{ btn('a', 'other-rooms__btn btn btn--beige', 'View Room', 'rooms.html') }}
+				</div>
+			{% endfor %}
+		</div>
+		<div class="other-rooms__nav other-rooms__nav--left swiper-button-prev"></div>
+		<div class="other-rooms__nav other-rooms__nav--right swiper-button-next"></div>
+	</div>
+</div>

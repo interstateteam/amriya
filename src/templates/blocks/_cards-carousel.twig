@@ -1,0 +1,47 @@
+<div class="cards-carousel js-cards-container">
+	<div class="cards-carousel__container">
+		{% if withButton %}
+			<div class="cards-carousel__info cards-carousel__info--with-button">
+				<div class="cards-carousel__description">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in erat at nisi dapibus scelerisque vel viverra nisi praesent.</p>
+				</div>
+				{{ btn('a', 'cards-carousel__link link', 'Coming Up', '') }}
+			</div>
+		{% elif withTitle %}
+			<div class="cards-carousel__info cards-carousel__info--with-title">
+				<div class="cards-carousel__info-left">
+					<h2 class="cards-carousel__upper-title h3">Sub heading</h2>
+					<h3 class="cards-carousel__title">Only the <b>finest</b></h3>
+				</div>
+				<div class="cards-carousel__info-right">
+					<div class="cards-carousel__txt txt-1">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in erat at nisi dapibus scelerisque vel viverra nisi praesent.</p>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		<div class="cards-carousel__slider js-cards-slider swiper">
+			<div class="swiper-wrapper">
+				{% set cardsSlides = [
+					'Circa Brunch', 'Supper Club', 'Secret Garden', 'Pool', 'Fitness Centre', 'Dining Experiences'
+				] %}
+				{% for title in cardsSlides %}
+					<div class="cards-carousel__card card js-card swiper-slide">
+						<div class="card__bg">
+							<img src="img/cards-carousel-{{ loop.index }}.jpg" alt="">
+						</div>
+						{% if not withoutDetails %}
+							<div class="card__info">
+								<h4 class="card__title">{{ title }}</h4>
+								<div class="card__txt js-card-txt">
+									<p>Lorem ipsum dolor sit amet, consectet ur adipiscing elit. Phasellus in erat at nisi dapibus scelerisque.</p>
+								</div>
+							</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	{{ scroll('cards-carousel__scroll') }}
+</div>

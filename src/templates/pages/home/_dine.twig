@@ -1,0 +1,52 @@
+<div class="home-dine">
+	<div class="home-dine__container">
+		<div class="home-dine__content js-home-dine-images">
+			<div class="home-dine__details">
+				{{ h2("dine", 'home-dine__label') }}
+				<div class="home-dine__description txt-3 is-mobile-hidden">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ex vitae risus volutpat volutpat. Pellentesque dictum convallis neque, non finibus.</p>
+				</div>
+				{{ btn("a", "home-dine__link link is-mobile-hidden", "Explore our Restaurants", "") }}
+			</div>
+			<h3 class="home-dine__title h1">
+				<span>Feast your eyes.</span>
+				<span>Tickle your buds.</span>
+			</h3>
+			<div class="home-dine__description txt-3 is-mobile-visible">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ex vitae risus volutpat volutpat. Pellentesque dictum convallis neque, non finibus.</p>
+			</div>
+			<div class="home-dine__items">
+				<ul>
+					<li class="home-dine__item js-home-dine-link">
+						{{ inline("arrow-long-right") }}
+						<span>Masso</span>
+					</li>
+					<li class="home-dine__item js-home-dine-link">
+						{{ inline("arrow-long-right") }}
+						<span>The Orangery</span>
+					</li>
+					<li class="home-dine__item js-home-dine-link">
+						{{ inline("arrow-long-right") }}
+						<span>Circa</span>
+					</li>
+				</ul>
+			</div>
+			{{ btn("a", "home-dine__link link is-mobile-visible", "Explore our Restaurants", "") }}
+			<div class="home-dine__images js-home-dine-slider swiper">
+				<div class="swiper-wrapper">
+					{% for i in range(2, 5) %}
+						<div class="home-dine__img swiper-slide">
+							<img src="img/home-dine-{{ i }}.jpg" alt="">
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="home-dine__photo-top">
+			<img src="img/home-dine-1.jpg" alt="">
+		</div>
+		<div class="home-dine__photo-bottom">
+			<img src="img/home-dine-5.jpg" alt="">
+		</div>
+	</div>
+</div>

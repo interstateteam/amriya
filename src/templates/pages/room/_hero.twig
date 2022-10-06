@@ -1,0 +1,29 @@
+<div class="room-hero">
+	<div class="room-hero__slider js-room-hero-slider swiper">
+		<div class="swiper-wrapper">
+			{% set roomImgs = [
+				'room-hero-bg', 'room-full-width-photo', 'home-stay-5', 'home-hero-bg'
+			] %}
+			{% for img in roomImgs %}
+				<div class="room-hero__photo swiper-slide">
+					<img src="img/{{ img }}.jpg" alt="">
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="room-hero__wrapper">
+		<div class="room-hero__container">
+			<h1 class="room-hero__title">Courtyard</h1>
+			<div class="room-hero__pagination">
+				{% set pagItems = [
+					'Room', 'Bed', 'Bathroom', 'Balcony'
+				] %}
+				{% for item in pagItems %}
+					<div class="room-hero__page js-room-hero-slider-pagination">
+						<span>{{ item }}</span>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>

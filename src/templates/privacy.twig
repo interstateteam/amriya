@@ -1,0 +1,18 @@
+---
+title: Privacy Policy Page
+description: Privacy Policy Page description
+pageName: privacyPage
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+	<main>
+		{% set heroTitle = 'Privacy' %}
+		{# {% set heroPhoto = 'privacy-hero-bg' %} #}
+		{# {% set heroClass = 'hero-default--privacy' %} #}
+		{% include 'pages/_hero-default.twig' %}
+		{% include 'pages/_text.twig' %}
+	</main>
+	{% include 'blocks/_footer.twig' %}
+{% endblock %}
+

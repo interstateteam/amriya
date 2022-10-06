@@ -1,0 +1,122 @@
+.about {
+	position: relative;
+	z-index: 70;
+	padding: calc(#{vh(446/980)} + 149px) $wrap-desk-md vw(389/1620);
+	@include media($min: 1620px) {
+		padding-bottom: 389px;
+	}
+	@include tabletMaxi {
+		padding: calc(#{vw(300/1024)} + 105px) $wrap-tab-md vw(300/1024);
+	}
+	@include tablet {
+		padding-top: vw(193/768);
+	}
+	@include mobile {
+		padding: calc(#{vw(150/414)} + 44px) $wrap-mob-md vw(355/414);
+	}
+}
+
+.about__container {
+	@extend %container;
+	max-width: 1420px;
+}
+
+.about__intro {
+	margin-bottom: 60px;
+	width: percentage(1338/1420);
+	font-family: $font-accent;
+	font-size: 50px;
+	line-height: 1.275;
+	font-weight: 200;
+	@include tabletMaxi {
+		margin-bottom: 56px;
+		width: auto;
+		font-size: 38px;
+		line-height: 1.305;
+	}
+	@include mobile {
+		margin-bottom: 30px;
+		font-size: 22px;
+		line-height: 1.405;
+	}
+}
+
+.about__description {
+	margin-left: percentage(900/1420);
+	width: percentage(453/1420);
+	font-size: 22px;
+	line-height: (32/22);
+	font-weight: 300;
+	@include tabletMaxi {
+		margin-left: percentage(436/854);
+		width: percentage(419/854);
+	}
+	@include mobile {
+		margin-left: 0;
+		width: auto;
+		font-size: 18px;
+		line-height: (30/18);
+	}
+}
+
+.about__photos {
+	position: relative;
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}
+
+.about__photo-left {
+	position: absolute;
+	left: percentage(80/1420);
+	top: vw(-87/1620);
+	width: percentage(700/1420);
+	@include aspect-ratio(640, 700);
+	@include media($min: 1620px) {
+		top: -87px;
+	}
+	@include tabletMaxi {
+		left: -$wrap-tab-md;
+		top: vw(-96/1024);
+		width: percentage(418/854);
+		@include aspect-ratio(459, 418);
+	}
+	@include tablet {
+		width: 55%;
+	}
+	@include mobile {
+		left: -$wrap-mob-md;
+		top: vw(104/414);
+		width: percentage(263/374);
+		@include aspect-ratio(260, 263);
+	}
+}
+
+.about__photo-bottom {
+	position: absolute;
+	right: percentage(160/1420);
+	top: vw(155/1620);
+	bottom: auto;
+	width: percentage(780/1420);
+	@include aspect-ratio(540, 780);
+	@include media($min: 1620px) {
+		top: 155px;
+	}
+	@include tabletMaxi {
+		right: -$wrap-tab-md;
+		top: vw(131/1024);
+		width: percentage(669/854);
+		@include aspect-ratio(463, 669);
+	}
+	@include tablet {
+		width: 83%;
+	}
+	@include mobile {
+		right: -$wrap-mob-md;
+		top: vw(275/414);
+		width: percentage(263/374);
+		@include aspect-ratio(215, 263);
+	}
+}

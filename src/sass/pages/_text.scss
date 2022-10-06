@@ -1,0 +1,114 @@
+.text {
+	padding: 170px $wrap-desk-md 153px;
+	@include tabletMaxi {
+		padding: 160px $wrap-tab-md 131px;
+	}
+	@include mobile {
+		padding: 67px $wrap-mob-md 96px;
+	}
+}
+
+.text__container {
+	@extend %container;
+	max-width: 1420px;
+	display: flex;
+	align-items: flex-start;
+	@include mobile {
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
+
+.text__aside {
+	@include upTablet {
+		position: sticky;
+		top: 150px;
+	}
+	@include upLaptop {
+		width: percentage(460/1420);
+	}
+	@include onlyTabletMaxi {
+		width: percentage(267/854);
+	}
+	@include mobile {
+		margin-bottom: 59px;
+	}
+}
+
+.text__anchors {
+	li {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.text__anchor {
+	display: inline-flex;
+	align-items: center;
+	opacity: .6;
+	font-family: $font-accent;
+	font-size: 20px;
+	line-height: (30/20);
+	font-weight: 200;
+	transition: opacity $ease-200;
+
+	svg {
+		margin-bottom: 5px;
+		width: 0;
+		height: 16px;
+		transition: margin $ease-200, width $ease-200;
+	}
+
+	&:hover,
+	&.text__anchor--active {
+		opacity: 1;
+
+		svg {
+			margin-right: 12px;
+			width: 23px;
+		}
+	}
+}
+
+.text__content {
+	@extend %txt;
+	border-left: 1px solid rgba($c-white, .2);
+	padding-left: 19px;
+	font-size: 20px;
+	line-height: 1.772;
+	@include upLaptop {
+		max-width: 720px;
+		width: calc(#{percentage(960/1420)} - 80px);
+	}
+	@include onlyTabletMaxi {
+		width: calc(#{percentage(587/854)} - 20px);
+	}
+	@include mobile {
+		font-size: 18px;
+		line-height: (30/18);
+	}
+
+	#{$h} {
+		margin-bottom: 24px;
+		font-family: $font-accent;
+		font-size: 34px;
+		line-height: (40/34);
+		font-weight: 200;
+
+		&:not(:first-child) {
+			@include upTablet {
+				margin-top: 69px;
+			}
+		}
+	}
+
+	p, ul, ol, li {
+		&:not(:last-child) {
+			margin-bottom: 32px;
+			@include mobile {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}

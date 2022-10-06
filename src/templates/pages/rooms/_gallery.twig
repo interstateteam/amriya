@@ -1,0 +1,11 @@
+<div class="rooms-gallery">
+	<div class="rooms-gallery__wrapper">
+		<div class="rooms-gallery__container">
+			<span class="rooms-gallery__decor-text">Luxury</span>
+			{{ inline("logo-plant") }}
+		</div>
+	</div>
+	{% set withTitle = true %}
+	{% set withoutDetails = true %}
+	{% include 'blocks/_cards-carousel.twig' %}
+</div>

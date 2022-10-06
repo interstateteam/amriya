@@ -1,0 +1,18 @@
+//include third-party fonts
+
+@mixin font-face($font-name, $file-name, $font-weight, $font-style) {
+	@font-face {
+		font-family: quote($font-name);
+		font-style: $font-style;
+		font-weight: $font-weight;
+		src: url("../fonts/"+ $file-name + ".woff2") format("woff2"),
+			url("../fonts/"+ $file-name + ".woff") format("woff");
+		font-display: swap;
+	}
+}
+
+@include font-face(Altform, Altform-Regular, 400, normal);
+@include font-face(Altform, Altform-Bold, 700, normal);
+@include font-face(Altform, Altform-Light, 300, normal);
+@include font-face(Woodland, PPWoodland-Regular, 400, normal);
+@include font-face(Woodland, PPWoodland-Ultralight, 200, normal);

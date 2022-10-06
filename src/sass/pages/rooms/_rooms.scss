@@ -1,0 +1,60 @@
+.rooms {
+	overflow: hidden;
+	padding: calc(#{vw(306/1620)} + 229px) $wrap-desk-md 158px;
+	background-color: $c-beige;
+	color: $c-dark;
+	@include media($min: 1620px) {
+		padding-top: 535px;
+	}
+	@include tabletMaxi {
+		padding: calc(#{vw(287/1024)} + 184px) $wrap-mob-sm 224px;
+	}
+	@include tablet {
+		padding-bottom: 395px;
+	}
+	@include mobile {
+		padding-top: calc(#{vw(126/414)} + 229px);
+		padding-bottom: 0;
+	}
+}
+
+.rooms__container {
+	@extend %container;
+	position: relative;
+	max-width: 1420px;
+}
+
+.rooms__decor-text {
+	position: absolute;
+	left: percentage(402/1420);
+	top: -196px;
+	opacity: .05;
+	font-family: $font-accent;
+	font-size: 400px;
+	line-height: 1;
+	font-weight: 200;
+	color: $c-black;
+	@include tabletMaxi {
+		left: percentage(320/1024);
+		top: -158px;
+		font-size: 320px;
+	}
+	@include mobile {
+		left: percentage(33/414);
+		top: auto;
+		bottom: calc(100% + 22px);
+		font-size: 220px;
+	}
+}
+
+.rooms__label {
+	margin-bottom: 48px;
+	@include tabletMaxi {
+		margin-left: 60px;
+		margin-bottom: 28px;
+	}
+	@include mobile {
+		margin-left: $wrap-mob-md;
+		margin-bottom: 29px;
+	}
+}

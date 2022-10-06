@@ -1,0 +1,174 @@
+.other-rooms {
+	position: relative;
+}
+
+.other-rooms__photo {
+	position: relative;
+	@include aspect-ratio(760, 1620);
+	background-color: $c-black;
+	transition-property: opacity;
+	@include tabletMaxi {
+		@include aspect-ratio(640, 1024);
+	}
+	@include mobile {
+		@include aspect-ratio(700, 414);
+	}
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+		opacity: .6;
+	}
+}
+
+.other-rooms__links {
+	@include absolute-full-width;
+	z-index: 50;
+	padding: 0 percentage(313/1620);
+	@include desktopMini {
+		padding: 0 14%;
+	}
+	@include miniLaptop {
+		padding: 0 11%;
+	}
+	@include tabletMaxi {
+		padding: 0 percentage(213/1024);
+	}
+	@include mobile {
+		padding: 0 12.8%;
+	}
+	@include mobileMicro {
+		padding: 0 10%;
+	}
+}
+
+.other-rooms__nav {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	width: percentage(313/1620);
+	height: 100%;
+	@include desktopMini {
+		width: 14%;
+	}
+	@include miniLaptop {
+		width: 11%;
+	}
+	@include tabletMaxi {
+		width: percentage(213/1024);
+	}
+	@include mobile {
+		width: 12.8%;
+	}
+	@include mobileMicro {
+		width: 10%;
+	}
+}
+
+.other-rooms__nav--left {
+	left: 0;
+}
+
+.other-rooms__nav--right {
+	right: 0;
+}
+
+.other-rooms__info {
+	padding-top: 98px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	opacity: .5;
+	transition: opacity $ease-300;
+	@include tabletMaxi {
+		padding-top: 6px;
+	}
+	@include mobile {
+		padding-top: 28px;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: percentage(354/760);
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+		background-color: currentColor;
+		opacity: 0;
+		@include miniLaptop {
+			top: 45.6%;
+		}
+		@include tabletMaxi {
+			display: none;
+		}
+	}
+
+	&::before {
+		left: 12px;
+	}
+
+	&::after {
+		right: 12px;
+	}
+
+	&.swiper-slide-active {
+		opacity: 1;
+
+		&::before,
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+
+.other-rooms__title {
+	margin-bottom: 26px;
+	font-family: $font-accent;
+	font-size: 84px;
+	line-height: (86/84);
+	font-weight: 200;
+	@include upDesktopMaxi {
+		font-size: 120px;
+	}
+	@include tabletMaxi {
+		margin-bottom: 17px;
+	}
+	@include tablet {
+		font-size: 56px;
+		line-height: (60/56);
+	}
+}
+
+.other-rooms__details {
+	margin-bottom: 48px;
+	font-size: 22px;
+	line-height: 1.1;
+	font-weight: 300;
+	@include upDesktopMaxi {
+		font-size: 30px;
+	}
+	@include tabletMaxi {
+		margin-bottom: 41px;
+	}
+	@include tablet {
+		margin-bottom: 49px;
+		font-size: 18px;
+	}
+}
+
+.other-rooms__btn {
+	opacity: 0;
+	transition: opacity $ease-300;
+
+	&, &::after {
+		border-color: rgba($c-beige, .4);
+	}
+
+	.swiper-slide-active & {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,187 @@
+.instagram {
+	overflow: hidden;
+	padding: 80px $wrap-desk-md 160px;
+	background-color: rgba($c-white, .03);
+	@include tabletMaxi {
+		padding: 60px 0 154px;
+	}
+	@include mobile {
+		padding: 86px $wrap-mob-md 105px;
+	}
+}
+
+.instagram__container {
+	@extend %container;
+	position: relative;
+	max-width: 1420px;
+}
+
+.instagram__main {
+	position: relative;
+	z-index: 50;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include tabletMaxi {
+		z-index: 0;
+	}
+
+	.svg-logo-plant {
+		margin-bottom: 14px;
+		width: 84px;
+		height: 100px;
+		@include tabletMaxi {
+			margin-bottom: 19px;
+		}
+	}
+}
+
+.instagram__title {
+	margin-bottom: 18px;
+	font-family: $font-accent;
+	text-align: center;
+	font-size: 34px;
+	line-height: 1.1;
+	font-weight: 200;
+	@include tabletMaxi {
+		margin-bottom: 14px;
+		font-size: 30px;
+	}
+	@include mobile {
+		margin-bottom: 7px;
+	}
+}
+
+.instagram__subtitle {
+	margin-bottom: 82px;
+	text-align: center;
+	font-size: 22px;
+	line-height: 1.1;
+	font-weight: 300;
+	@include tabletMaxi {
+		margin-bottom: 66px;
+		font-size: 20px;
+	}
+	@include mobile {
+		margin-bottom: 34px;
+		font-size: 16px;
+	}
+}
+
+[class*=instagram__photo] {
+	position: relative;
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}
+
+.instagram__photo-main {
+	margin-bottom: 111px;
+	width: percentage(300/1420);
+	@include aspect-ratio(397, 300);
+	opacity: .9;
+	@include tabletMaxi {
+		margin-bottom: 90px;
+		width: percentage(314/1024);
+	}
+	@include mobile {
+		margin-bottom: 42px;
+		width: percentage(241/374);
+		@include aspect-ratio(328, 241);
+		opacity: 1;
+	}
+}
+
+.instagram__bg-text {
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: percentage(192/850);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	opacity: .08;
+	text-align: center;
+	font-family: $font-accent;
+	font-size: 280px;
+	line-height: 1.1;
+	letter-spacing: 6px;
+	font-weight: 200;
+	@include tabletMaxi {
+		top: percentage(275/826);
+		left: percentage(-136/1024);
+	}
+	@include mobile {
+		display: none;
+	}
+}
+
+.instagram__photo-left-top {
+	position: absolute;
+	z-index: 20;
+	left: percentage(160/1420);
+	top: percentage(352/850);
+	width: percentage(220/1420);
+	@include aspect-ratio(300, 220);
+	@include tabletMaxi {
+		left: percentage(-45/1024);
+		top: percentage(244/826);
+		width: percentage(212/1024);
+		@include aspect-ratio(252, 212);
+	}
+	@include mobile {
+		display: none;
+	}
+}
+
+.instagram__photo-left-bottom {
+	position: absolute;
+	z-index: 30;
+	left: percentage(240/1420);
+	top: percentage(592/850);
+	width: percentage(220/1420);
+	@include aspect-ratio;
+	@include tabletMaxi {
+		left: percentage(105/1024);
+		top: percentage(444/826);
+		width: percentage(146/1024);
+	}
+	@include mobile {
+		display: none;
+	}
+}
+
+.instagram__photo-right-top {
+	position: absolute;
+	z-index: 20;
+	right: 0;
+	top: percentage(122/850);
+	width: percentage(140/1420);
+	@include aspect-ratio(210, 140);
+	@include tabletMaxi {
+		top: percentage(154/826);
+		width: percentage(166/1024);
+	}
+	@include mobile {
+		display: none;
+	}
+}
+
+.instagram__photo-right-bottom {
+	position: absolute;
+	z-index: 30;
+	right: percentage(240/1420);
+	top: percentage(422/850);
+	width: percentage(140/1420);
+	@include aspect-ratio;
+	@include tabletMaxi {
+		right: percentage(105/1024);
+		top: percentage(379/826);
+		width: percentage(165/1024);
+	}
+	@include mobile {
+		display: none;
+	}
+}

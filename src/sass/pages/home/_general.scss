@@ -1,0 +1,7 @@
+.home-dark {
+	overflow: hidden;
+	background-color: rgba($c-white, .05);
+	@include mobile {
+		background-color: transparent;
+	}
+}

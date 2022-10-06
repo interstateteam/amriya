@@ -1,0 +1,88 @@
+<div class="booking js-booking is-invisible">
+	<div class="booking__container-outer">
+		<div class="booking__container">
+			<h2 class="booking__title">What would you like to book?</h2>
+			<div class="booking__tabs" data-tab-wrapper>
+				<div class="booking__tab-btns">
+					<button class="booking__tab-btn" data-tab-button="1">Hotel Stay</button>
+					<button class="booking__tab-btn" data-tab-button="2">Masso Restaurant</button>
+					<button class="booking__tab-btn" data-tab-button="3">Circa</button>
+					<button class="booking__tab-btn" data-tab-button="4">The Orangery</button>
+				</div>
+				<div class="booking__wrapper" data-tab-container>
+					<div class="booking__content" data-tab-content="1">
+						<h3 class="booking__title booking__title--inner">When?</h3>
+						<div class="booking__description">
+							<p>What would you like to book?*</p>
+						</div>
+						<div class="booking__form">
+							<div class="booking__field">
+								<label class="booking__label booking__label--required">ROOMS</label>
+								<select name="" required>
+									{% for i in range(1, 13) %}
+										<option value="{{ i }}">{{ i }}</option>
+									{% endfor %}
+								</select>
+							</div>
+							<div class="booking__field">
+								<label class="booking__label">ADULTS</label>
+								<div class="booking__input js-count-input">
+									<input type="number" name="" value="0" min="0" step="1">
+									<span class="booking__minus js-count-minus">{{ inline("minus") }}</span>
+									<span class="booking__plus js-count-plus">{{ inline("plus") }}</span>
+								</div>
+							</div>
+							<div class="booking__field">
+								<label class="booking__label">CHILDREN</label>
+								<div class="booking__input js-count-input">
+									<input type="number" name="" value="0" min="0" step="1">
+									<span class="booking__minus js-count-minus">{{ inline("minus") }}</span>
+									<span class="booking__plus js-count-plus">{{ inline("plus") }}</span>
+								</div>
+							</div>
+							<div class="booking__field booking__field--date">
+								<label class="booking__label booking__label--required">check in</label>
+								<div class="booking__input">
+									<input class="js-datepicker-start" type="text" name="" placeholder="MM - DD - YY" required readonly>
+									<span class="booking__calendar">{{ inline("calendar") }}</span>
+								</div>
+							</div>
+							<div class="booking__field booking__field--date">
+								<label class="booking__label booking__label--required">check out</label>
+								<div class="booking__input">
+									<input class="js-datepicker-end" type="text" name="" placeholder="MM - DD - YY" required readonly>
+									<span class="booking__calendar">{{ inline("calendar") }}</span>
+								</div>
+							</div>
+							<div class="booking__field booking__field--promo">
+								<label class="booking__label">PROMO CODE</label>
+								<input type="text" name="" placeholder="Please enter here">
+							</div>
+						</div>
+					</div>
+					<div class="booking__content" data-tab-content="2">
+						<h3 class="booking__title booking__title--inner">When?</h3>
+						<div class="booking__description">
+							<p>PLEASE CHECK AVAILABILITY USING THE BUTTON BELOW, or visit <a href="">www.massorestaurant.bh</a></p>
+						</div>
+					</div>
+					<div class="booking__content" data-tab-content="3">
+						<h3 class="booking__title booking__title--inner">When?</h3>
+						<div class="booking__description">
+							<p>PLEASE CHECK AVAILABILITY USING THE BUTTON BELOW</p>
+						</div>
+					</div>
+					<div class="booking__content" data-tab-content="4">
+						<h3 class="booking__title booking__title--inner">When?</h3>
+						<div class="booking__description">
+							<p>we do not accept table bookings for the orangery. tables are available on a first come, first service basis.</p>
+							<p>for onsite or offsite catering ENquIries, please USe THE BUTTON BELOW, or visit <a href="">www.theorangery.bh</a></p>
+						</div>
+					</div>
+				</div>
+				{{ book('button', 'btn-book--menu-opened booking__submit is-invisible js-booking-submit', 'CHECK AVAILABLILITY') }}
+			</div>
+		</div>
+		{% include 'blocks/_popup-footer.twig' %}
+	</div>
+</div>

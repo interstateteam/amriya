@@ -1,0 +1,339 @@
+.room-content {
+	overflow: hidden;
+}
+
+.room-info {
+	padding: 0 $wrap-desk-lg 91px;
+	@include tabletMaxi {
+		padding: 0 $wrap-tab-md 130px;
+	}
+	@include tablet {
+		padding: 0 $wrap-tab-sm 130px;
+	}
+	@include mobile {
+		padding: 0 $wrap-mob-md 81px;
+	}
+}
+
+.room-info__container {
+	@extend %container;
+	position: relative;
+	max-width: 1260px;
+	display: flex;
+	flex-direction: column;
+}
+
+.room-info__photo-top {
+	position: absolute;
+	z-index: 50;
+	left: -104px;
+	bottom: calc(100% - 56px);
+	width: percentage(244/1260);
+	@include aspect-ratio(330, 244);
+	opacity: .9;
+	@include laptop {
+		bottom: 100%;
+	}
+	@include tabletMaxi {
+		left: 25px;
+		bottom: calc(100% - 26px);
+		width: percentage(225/854);
+	}
+	@include mobile {
+		position: relative;
+		left: auto;
+		bottom: auto;
+		order: 2;
+		margin-left: -$wrap-mob-md;
+		width: percentage(197/374);
+		@include aspect-ratio(254, 197);
+	}
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}
+
+.room-description {
+	position: relative;
+	z-index: 50;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@include mobile {
+		order: 1;
+		flex-direction: column-reverse;
+	}
+}
+
+.room-description__info {
+	margin-bottom: 79px;
+	width: 44%;
+	@include miniLaptop {
+		margin-bottom: 50px;
+		width: 53%;
+	}
+	@include tabletMaxi {
+		margin-top: 24px;
+		margin-bottom: 0;
+		width: percentage(419/854);
+	}
+	@include mobile {
+		margin-top: 52px;
+		margin-bottom: 97px;
+		width: 100%;
+	}
+}
+
+.room-description__title {
+	margin-bottom: 24px;
+	font-family: $font-accent;
+	font-size: 50px;
+	font-weight: 200;
+	@include tabletMaxi {
+		font-size: 48px;
+	}
+	@include tablet {
+		font-size: 42px;
+	}
+	@include mobile {
+		margin-bottom: 20px;
+	}
+}
+
+.room-description__txt {
+	margin-bottom: 26px;
+	@include tabletMaxi {
+		margin-bottom: 31px;
+	}
+	@include mobile {
+		margin-bottom: 30px;
+	}
+}
+
+.room-description__photo {
+	position: relative;
+	margin-right: -80px;
+	width: percentage(620/1260);
+	@include tabletMaxi {
+		margin-right: -$wrap-tab-md;
+		width: percentage(418/854);
+	}
+	@include mobile {
+		margin-right: 0;
+		width: 100%;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		right: -40px;
+		top: -45px;
+		width: 100%;
+		height: calc(100% - 5px);
+		background-color: rgba($c-white, .05);
+		@include onlyTabletMaxi {
+			display: none;
+		}
+		@include mobile {
+			right: -20px;
+			top: -20px;
+			height: 100%;
+		}
+	}
+}
+
+.room-description__img {
+	position: relative;
+	z-index: 50;
+	@include aspect-ratio(780, 620);
+	opacity: .9;
+	@include tabletMaxi {
+		@include aspect-ratio(573, 418);
+	}
+	@include mobile {
+		@include aspect-ratio(471, 374);
+	}
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}
+
+.room-info__photo-middle {
+	position: relative;
+	z-index: 50;
+	margin-top: -153px;
+	margin-left: percentage(160/1260);
+	margin-bottom: 72px;
+	width: percentage(380/1260);
+	@include aspect-ratio(418, 380);
+	opacity: .9;
+	@include laptop {
+		margin-top: -80px;
+	}
+	@include miniLaptop {
+		margin-top: -40px;
+	}
+	@include tabletMaxi {
+		margin-top: 93px;
+		margin-left: 20px;
+		margin-bottom: 167px;
+		width: percentage(314/854);
+	}
+	@include mobile{
+		order: 3;
+		margin-top: -149px;
+		margin-left: auto;
+		margin-bottom: 113px;
+		margin-right: -$wrap-mob-md;
+		width: percentage(263/374);
+		@include aspect-ratio(318, 263);
+	}
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}
+
+.room-options {
+	position: relative;
+	z-index: 50;
+	display: flex;
+	justify-content: space-between;
+	@include mobile {
+		order: 4;
+		flex-direction: column;
+	}
+}
+
+.room-options__title {
+	margin-top: 97px;
+	font-family: $font-accent;
+	font-size: 50px;
+	line-height: (51/50);
+	font-weight: 200;
+	@include tabletMaxi {
+		margin-top: -9px;
+		margin-left: 20px;
+		font-size: 48px;
+		line-height: (49/48);
+	}
+	@include tablet {
+		font-size: 42px;
+		line-height: (51/42);
+	}
+	@include mobile {
+		margin: 0 0 44px;
+	}
+
+	span {
+		display: block;
+
+		&:nth-child(2n) {
+			color: $c-light-green;
+		}
+	}
+
+	svg {
+		display: inline-block;
+		margin: 0 -8px -4px 6px;
+		width: 38px;
+		height: 34px;
+		@include tabletMaxi {
+			margin-left: 2px;
+			margin-right: -4px;
+		}
+	}
+}
+
+.room-options__list {
+	width: percentage(540/1260);
+	font-family: $font-accent;
+	font-size: 22px;
+	line-height: 1.05;
+	font-weight: 200;
+	@include tabletMaxi {
+		width: percentage(419/854);
+	}
+	@include onlyTablet {
+		font-size: 18px;
+	}
+	@include mobile {
+		width: 100%;
+	}
+	@include mobileMicro {
+		font-size: 19px;
+	}
+
+	li {
+		border-top: 1px dashed rgba($c-beige, .2);
+		padding: 23px 20px;
+		@include tabletMaxi {
+			padding: 23px 16px;
+		}
+		@include mobile {
+			padding: 23px 0;
+		}
+
+		&:last-child {
+			border-bottom: 1px dashed rgba($c-beige, .2);
+		}
+
+		&::before {
+			content: "\22C5";
+			display: inline-block;
+			margin-right: 19px;
+		}
+	}
+}
+
+.room-info__photo-bottom {
+	position: relative;
+	z-index: 50;
+	margin-left: percentage(160/1260);
+	margin-top: -8px;
+	width: percentage(300/1260);
+	@include aspect-ratio(360, 300);
+	@include tabletMaxi {
+		margin-top: -58px;
+		margin-left: 20px;
+		width: percentage(231/854);
+	}
+	@include mobile {
+		order: 5;
+		margin-top: 78px;
+		margin-left: -$wrap-tab-sm;
+		width: percentage(197/374);
+	}
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}
+
+.room-info {
+	.svg-logo-plant {
+		position: absolute;
+		left: percentage(-1076/1260);
+		bottom: 0;
+		transform: translateY(#{percentage(303/2129)}) rotate(10deg);
+		max-width: none;
+		width: percentage(1786/1260);
+		opacity: .03;
+		@include tabletMaxi {
+			left: percentage(-843/854);
+			transform: translateY(#{percentage(164/2129)}) rotate(10deg);
+			width: percentage(1786/854);
+		}
+		@include mobile {
+			left: percentage(-503/374);
+			transform: translateY(#{percentage(83/1159)}) rotate(10deg);
+			width: percentage(972/374);
+		}
+	}
+}

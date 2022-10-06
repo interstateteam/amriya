@@ -1,0 +1,207 @@
+.contact {
+	display: flex;
+	@include tabletMaxi {
+		flex-direction: column;
+	}
+}
+
+.contact__left {
+	padding-bottom: 23px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: $c-green;
+	@include upLaptop {
+		width: percentage(480/1620);
+	}
+	@include tabletMaxi {
+		padding: 138px $wrap-tab-md;
+	}
+	@include mobile {
+		padding: 87px $wrap-mob-md;
+	}
+}
+
+.contact__info--contact {
+	margin-bottom: 70px;
+	@include tabletMaxi {
+		margin-bottom: 51px;
+	}
+}
+
+.contact__info--find-us {
+	margin-bottom: 60px;
+	@include tabletMaxi {
+		margin-bottom: 37px;
+	}
+}
+
+.contact__info-title {
+	position: relative;
+	margin-bottom: 21px;
+	@include tabletMaxi {
+		margin-bottom: 15px;
+		padding-bottom: 10px;
+		font-size: 15px;
+	}
+
+	&::before {
+		@include tabletMaxi {
+			content: "";
+			position: absolute;
+			left: calc(50% - 6px);
+			bottom: 0;
+			width: 12px;
+			height: 1px;
+			background-color: #BFBBA9;
+		}
+	}
+
+	.contact__info--find-us & {
+		margin-bottom: 16px;
+		@include tabletMaxi {
+			margin-bottom: 12px;
+		}
+	}
+
+	.contact__info--follow & {
+		@include tabletMaxi {
+			margin-bottom: 19px;
+		}
+	}
+}
+
+.contact__info-text {
+	font-family: $font-accent;
+	font-size: 28px;
+	line-height: (38/28);
+	font-weight: 200;
+}
+
+.contact__link {
+	border-bottom: 1px dashed currentColor;
+}
+
+.contact__social {
+	display: flex;
+	justify-content: center;
+}
+
+.contact__social-link {
+	margin: 0 6px;
+	font-size: 16px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.contact__right {
+	padding: 107px $wrap-desk-md 125px;
+	@include upLaptop {
+		width: percentage(1140/1620);
+	}
+	@include tabletMaxi {
+		padding: 72px $wrap-tab-md 75px;
+	}
+	@include mobile {
+		padding: 71px $wrap-mob-md 80px;
+	}
+}
+
+.contact__title {
+	margin-bottom: 52px;
+	font-family: $font-accent;
+	text-align: center;
+	font-size: 42px;
+	line-height: 1.1;
+	font-weight: 200;
+	@include onlyTabletMaxi {
+		margin-bottom: 51px;
+		font-size: 52px;
+	}
+	@include mobile {
+		margin-bottom: 41px;
+		font-size: 42px;
+	}
+}
+
+.contact__form {
+	@extend %container;
+	max-width: 940px;
+}
+
+.contact__grid {
+	margin-bottom: 30px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	@include tabletMaxi {
+		margin-bottom: 40px;
+	}
+	@include mobile {
+		margin-bottom: 27px;
+		grid-template-columns: 1fr;
+		gap: 23px;
+	}
+
+	textarea {
+		@include upTablet {
+			grid-column: 1 / 3;
+		}
+	}
+}
+
+.contact__footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@include tabletMaxi {
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
+
+.contact__footnote {
+	margin-right: 30px;
+	margin-top: 9px;
+	font-size: 14px;
+	line-height: (23/14);
+	font-weight: 300;
+	text-transform: uppercase;
+	color: #BFBBA9;
+	@include tabletMaxi {
+		margin: 0 0 35px;
+	}
+	@include mobile {
+		margin-bottom: 47px;
+	}
+
+	a {
+		border-bottom: 1px dashed $c-beige;
+		transition: border-color $ease-200;
+
+		&:hover {
+			border-color: transparent;
+		}
+	}
+}
+
+.contact__send {
+	position: relative;
+	flex: none;
+	padding: 0;
+	background-color: rgba($c-light-green, .5);
+	@include tabletMaxi {
+		width: auto;
+	}
+	@include mobile {
+		height: 76px;
+	}
+
+	svg {
+		position: absolute;
+		right: 30px;
+		top: 31px;
+	}
+}

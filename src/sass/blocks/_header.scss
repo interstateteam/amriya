@@ -1,0 +1,477 @@
+$head-trans: $ease-300;
+
+.header {
+	position: fixed;
+	z-index: map-get($z-index, header);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 180px;
+	padding: 0 $wrap-desk-sm;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: height $head-trans, padding $head-trans, background-color $head-trans;
+	@include upDesktopMaxi {
+		height: 240px;
+		padding: 0 100px;
+	}
+	@include lowHeightLaptop {
+		height: 120px;
+		padding: 0 40px;
+	}
+	@include miniLaptop {
+		padding: 0 60px;
+	}
+	@include tabletMaxi {
+		padding: 0 60px 0 $wrap-tab-md;
+	}
+	@include mobile {
+		height: 100px;
+		padding: 0 $wrap-mob-sm;
+	}
+
+	&::before,
+	&::after {
+		@include mobile {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			width: calc(50% - 56px);
+			height: 1px;
+			opacity: .3;
+			background-color: currentColor;
+			transition: width $head-trans;
+		}
+	}
+
+	&::before {
+		@include mobile {
+			left: 0;
+		}
+	}
+
+	&::after {
+		@include upTablet {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 260px;
+			background: linear-gradient(180deg, $c-dark 0%, rgba($c-dark, 0) 98.08%);
+			opacity: 0.6;
+			pointer-events: none;
+			transition: opacity $head-trans;
+		}
+		@include upDesktopMaxi {
+			height: 340px;
+		}
+		@include lowHeightLaptop {
+			height: 200px;
+		}
+		@include mobile {
+			right: 0;
+		}
+	}
+}
+
+.header--menu-opened {
+	@include onlyTabletMaxi {
+		height: 145px;
+		padding-left: 75px;
+	}
+
+	&::after {
+		@include upTablet {
+			opacity: 0;
+		}
+	}
+}
+
+.header--scrolled:not(.header--menu-opened) {
+	height: 100px;
+	padding: 0 40px;
+	background-color: $c-dark;
+	@include upDesktopMaxi {
+		height: 133px;
+		padding: 0 60px;
+	}
+	@include lowHeightLaptop {
+		height: 75px;
+		padding: 0 30px;
+	}
+	@include onlyTabletMaxi {
+		padding-left: 0;
+	}
+	@include tabletMaxi {
+		height: 90px;
+	}
+	@include mobile {
+		padding: 0;
+	}
+
+	&::before,
+	&::after {
+		@include mobile {
+			width: 50%;
+		}
+	}
+
+	&::after {
+		@include upTablet {
+			opacity: 0;
+		}
+	}
+}
+
+.header__left,
+.header__center,
+.header__right {
+	position: relative;
+	z-index: 10;
+}
+
+.header__left,
+.header__right {
+	width: calc(50% - 60px);
+	@include upDesktopMaxi {
+		width: calc(50% - 90px);
+	}
+	@include mobile {
+		width: 90px;
+		height: 100%;
+	}
+}
+
+.header__left {
+	display: flex;
+	align-items: center;
+	transition: width $head-trans, height $head-trans;
+	@include onlyTabletMaxi {
+		width: calc(50% - 12px - 64px);
+	}
+	@include mobile {
+		border-right: 1px solid rgba($c-beige, .3);
+	}
+
+	.header--scrolled:not(.header--menu-opened) & {
+		@include onlyTabletMaxi {
+			width: calc(50% + 20px - 64px);
+			height: 100%;
+		}
+	}
+
+	.header--menu-opened & {
+		@include onlyTabletMaxi {
+			width: calc(50% - 7px - 64px);
+		}
+	}
+}
+
+.header__burger {
+	display: block;
+	margin: -20px 0 -20px -20px;
+	padding: 20px;
+	transition: $head-trans;
+	transition-property: margin, width, height, border, padding;
+	@include upDesktopMaxi {
+		margin: -30px 0 -30px -30px;
+		padding: 30px;
+	}
+	@include mobile {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	svg {
+		display: inline-block;
+		width: 30px;
+		height: 12px;
+		transition: width $head-trans, height $head-trans, transform $head-trans;
+		@include upDesktopMaxi {
+			width: 45px;
+			height: 18px;
+		}
+	}
+
+	.header--scrolled:not(.header--menu-opened) & {
+		@include onlyTabletMaxi {
+			margin: 0;
+			width: 90px;
+			height: 100%;
+			border-right: 1px solid rgba($c-beige, .3);
+		}
+	}
+
+	.header--menu-opened & {
+		@include upTablet {
+			margin-left: -15px;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			border: 1px solid rgba($c-beige, .3);
+			padding: 0;
+		}
+		@include upDesktopMaxi {
+			width: 90px;
+			height: 90px;
+		}
+		@include onlyTabletMaxi {
+			width: 56px;
+			height: 56px;
+		}
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
+
+.burger {
+	overflow: visible;
+}
+
+.burger__top,
+.burger__bottom {
+	transform-origin: center;
+	transition: transform $head-trans;
+}
+
+.burger__center-right,
+.burger__center-left {
+	transition: opacity $head-trans;
+}
+
+.header--menu-opened {
+	.burger {
+		transform: rotate(180deg);
+	}
+
+	.burger__center-right,
+	.burger__center-left {
+		opacity: 0;
+	}
+
+	.burger__top {
+		transform: rotate(-45deg) translate(2px,7px) scale(1.3);
+		@include upDesktopMaxi {
+			transform: rotate(-45deg) translate(1px,9px) scale(1.8);
+		}
+	}
+
+	.burger__bottom {
+		transform: rotate(45deg) translate(-2px,-9px) scale(1.3);
+		@include upDesktopMaxi {
+			transform: rotate(45deg) translate(-2px,-14px) scale(1.8);
+		}
+	}
+}
+
+.header__menu {
+	margin: -20px 0;
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	line-height: 1.1;
+	font-weight: 400;
+	text-transform: uppercase;
+	transition: opacity $head-trans;
+	@include upDesktopMaxi {
+		font-size: 28px;
+	}
+	@include tabletMaxi {
+		display: none;
+	}
+
+	.header--menu-opened & {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+.header__link {
+	display: block;
+	padding: 10px 20px;
+	@include upDesktopMaxi {
+		padding: 20px 30px;
+	}
+	@include miniLaptop {
+		padding: 10px;
+	}
+}
+
+.header__center {
+	align-self: flex-start;
+	margin-top: 28px;
+	display: flex;
+	justify-content: center;
+	transition: margin $head-trans;
+	@include lowHeightLaptop {
+		margin-top: 13px;
+	}
+	@include tabletMaxi {
+		margin-top: 38px;
+	}
+	@include mobile {
+		margin-top: 14px;
+	}
+
+	.header--scrolled:not(.header--menu-opened) & {
+		margin-top: 13px;
+		@include upDesktopMaxi {
+			margin-top: 20px;
+		}
+		@include lowHeightLaptop {
+			margin-top: 7px;
+		}
+	}
+
+	.header--menu-opened & {
+		@include onlyTabletMaxi {
+			margin-top: 28px;
+		}
+	}
+}
+
+.header__logo {
+	width: 120px;
+	height: 167px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: height $head-trans;
+	@include upDesktopMaxi {
+		width: 180px;
+		height: 251px;
+	}
+	@include lowHeightLaptop {
+		width: 96px;
+		height: 134px;
+	}
+	@include tabletMaxi {
+		width: 126px;
+		height: 175px;
+	}
+	@include mobile {
+		width: 95px;
+		height: 132px;
+	}
+
+	svg {
+		width: 100%;
+		height: 100%;
+
+		&:not(:first-child) {
+			margin-top: 5px;
+			@include mobile {
+				margin-top: 4px;
+			}
+		}
+	}
+
+	.svg-logo-plant {
+		margin-left: percentage(4/120);
+		width: percentage(75/120);
+		transition: width $head-trans;
+	}
+
+	.header--scrolled:not(.header--menu-opened) & {
+		height: 74px;
+		@include upDesktopMaxi {
+			height: 93px;
+		}
+		@include lowHeightLaptop {
+			height: 59px;
+		}
+		@include tabletMaxi {
+			height: 64px;
+		}
+
+		.svg-logo-plant {
+			width: 62px;
+			@include upDesktopMaxi {
+				width: 78px;
+			}
+			@include lowHeightLaptop {
+				width: 50px;
+			}
+			@include tabletMaxi {
+				width: 54px;
+			}
+		}
+
+		.svg-logo-title {
+			display: none;
+		}
+	}
+}
+
+.header__right {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	transition: width $head-trans;
+	@include onlyTabletMaxi {
+		width: calc(50% + 12px - 64px);
+	}
+	@include mobile {
+		border-left: 1px solid rgba($c-beige, .3);
+	}
+
+	.header--scrolled:not(.header--menu-opened) & {
+		@include onlyTabletMaxi {
+			width: calc(50% - 20px - 64px);
+		}
+	}
+
+	.header--menu-opened & {
+		@include onlyTabletMaxi {
+			width: calc(50% + 7px - 64px);
+		}
+	}
+}
+
+.header__phone {
+	margin: -10px -20px;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	line-height: 1.1;
+	font-weight: 400;
+	text-transform: uppercase;
+	@include upDesktopMaxi {
+		font-size: 26px;
+	}
+	@include mobile {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	svg {
+		margin-right: 16px;
+		width: 19px;
+		height: 19px;
+		@include upDesktopMaxi {
+			margin-right: 26px;
+			width: 29px;
+			height: 29px;
+		}
+		@include mobile {
+			margin-right: 0;
+			width: 22px;
+			height: 22px;
+		}
+	}
+
+	span {
+		@include mobile {
+			display: none;
+		}
+	}
+}

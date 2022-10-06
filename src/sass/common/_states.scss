@@ -1,0 +1,51 @@
+.is-hidden {
+	display: none !important;
+}
+
+.is-invisible {
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+.no-scroll {
+	overflow: hidden !important;
+}
+
+.is-desktop-visible {
+	@include tabletMaxi {
+		display: none !important;
+	}
+}
+
+.is-desktop-hidden {
+	@include upLaptop {
+		display: none !important;
+	}
+}
+
+.is-tablet-visible {
+	@include upLaptop {
+		display: none !important;
+	}
+	@include mobile {
+		display: none !important;
+	}
+}
+
+.is-tablet-hidden {
+	@include onlyTabletMaxi {
+		display: none !important;
+	}
+}
+
+.is-mobile-visible {
+	@include upTablet {
+		display: none !important;
+	}
+}
+
+.is-mobile-hidden {
+	@include mobile {
+		display: none !important;
+	}
+}

@@ -1,0 +1,89 @@
+.hero-default {
+	position: relative;
+	height: 720px;
+	padding: 0 27px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	background-color: $c-black;
+	@include tabletMaxi {
+		height: 610px;
+		padding: 0 40px;
+	}
+	@include mobile {
+		height: 570px;
+		padding: 0 $wrap-mob-md;
+	}
+
+	&.hero-default--privacy {
+		@include onlyTabletMaxi {
+			padding: 0 76px;
+		}
+	}
+}
+
+.hero-default--contact {
+	@include mobile {
+		height: 636px;
+	}
+}
+
+.hero-default__bg {
+	@include absolute-background;
+	opacity: .7;
+}
+
+.hero-default__title {
+	@extend %container;
+	position: relative;
+	z-index: 100;
+	margin-bottom: -100px;
+	max-width: 1566px;
+	font-family: $font-accent;
+	font-size: 340px;
+	line-height: 1.1;
+	font-weight: 200;
+	@include tabletMaxi {
+		margin-bottom: -78px;
+		font-size: 210px;
+	}
+	@include tablet {
+		margin-bottom: -60px;
+		font-size: 180px;
+	}
+	@include mobile {
+		margin-bottom: -33px;
+		text-align: center;
+		font-size: 90px;
+	}
+
+	.hero-default--contact & {
+		@include tabletMaxi {
+			font-size: 220px;
+		}
+		@include mobile {
+			font-size: 94px;
+		}
+	}
+
+	.hero-default--privacy & {
+		margin-bottom: -80px;
+		font-size: 200px;
+		line-height: (180/200);
+		@include tabletMaxi {
+			margin-bottom: -50px;
+			font-size: 130px;
+			line-height: 1;
+		}
+		@include tablet {
+			margin-bottom: -30px;
+			font-size: 90px;
+		}
+		@include mobile {
+			margin-bottom: -25px;
+			text-align: left;
+			font-size: 56px;
+			line-height: (60/56);
+		}
+	}
+}

@@ -1,0 +1,73 @@
+{% macro inline(filename) %}
+  {% set filename = "svg/_" + filename.replace(".svg", "") + ".svg.twig" %}
+  {% include filename %}
+{% endmacro %}
+
+{% macro svg(filename, class) %}
+  {% set filename = filename.replace(".svg", "") %}
+  <svg class="icon icon--{{filename}} {{class}}">
+    <use xlink:href="img/sprite.svg#{{filename}}"></use>
+  </svg>
+{% endmacro %}
+
+{% macro h2(text, class) %}
+	<h2 class="{{ class + ' ' if class }}h2">
+		{{ inline("star") }}
+		<span>{{ text }}</span>
+	</h2>
+{% endmacro %}
+
+{% macro btn(tag, class, text, href='') %}
+	<{{tag}} class="{{ class }}" {{ 'href=' + href if tag == 'a' }}>
+		<span>{{ text }}</span>
+		{{ inline("angle-right") }}
+	</{{tag}}>
+{% endmacro %}
+
+{% macro btnFill(tag, class, text, icon, href='') %}
+	<{{tag}} class="btn-fill{{ ' ' + class if class }}" {{ 'href=' + href if tag == 'a' }}>
+		<span>{{ text }}</span>
+		{% if icon %}
+			{{ inline(icon) }}
+		{% endif %}
+	</{{tag}}>
+{% endmacro %}
+
+{% macro circle(tag, class, icon, href='') %}
+	<{{tag}} class="circle{{ ' ' + class if class }}" {{ 'href=' + href if tag == 'a' }}>
+		{{ inline(icon) }}
+	</{{tag}}>
+{% endmacro %}
+
+{% macro down(class, href='#') %}
+	<a class="scroll-down{{ ' ' + class if class }}" href="{{ href }}">
+		{{ inline("arrow-down") }}
+	</a>
+{% endmacro %}
+
+{% macro nav(class, pag='') %}
+	<div class="slider-nav{{ ' ' + class if class }}">
+		<button class="slider-nav__prev swiper-button-prev">
+			{{ inline("arrow-left") }}
+		</button>
+		<div class="slider-nav__pag swiper-pagination">{{ pag }}</div>
+		<button class="slider-nav__next swiper-button-next">
+			{{ inline("arrow-right") }}
+		</button>
+	</div>
+{% endmacro %}
+
+{% macro scroll(class, fill=false) %}
+	<div class="slider-scroll swiper-scrollbar{{ ' ' + class if class }}">
+		{% if fill %}
+			<div class="swiper-scrollbar-drag"></div>
+		{% endif %}
+	</div>
+{% endmacro %}
+
+{% macro book(tag, class, text='', href='', openingPopup=true) %}
+	<{{tag}} class="btn-book{{ ' ' + class if class }}{{ ' js-open-booking' if openingPopup }}" {{ 'href=' + href if tag == 'a' }}>
+		<span>{{ text }}</span>
+		{{ inline("arrow-right") }}
+	</{{tag}}>
+{% endmacro %}

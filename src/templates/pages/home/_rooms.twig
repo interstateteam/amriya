@@ -1,0 +1,33 @@
+<div class="home-rooms">
+	<div class="home-rooms__ticker">
+		<div class="home-rooms__content">
+			<div class="home-rooms__photo">
+				<img src="img/home-stay-3.jpg" alt="">
+			</div>
+			<span class="home-rooms__label-top">palmyard</span>
+			<span class="home-rooms__label-bottom">palmyard</span>
+			<a class="home-rooms__btn" href="rooms.html">
+				<span>View</span>
+			</a>
+			<div class="home-rooms__marquee-wrapper">
+				<div class="home-rooms__marquee home-rooms__marquee--inner">
+					<div class="home-rooms__move js-ticker">
+						{% for i in range(1, 15) %}
+							{{ inline("rooms-outline") }}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="home-rooms__marquee">
+			<div class="home-rooms__move js-ticker">
+				{% for i in range(1, 15) %}
+					{{ inline("rooms-fill") }}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="home-rooms__img">
+		<img src="img/home-stay-4.jpg" alt="">
+	</div>
+</div>

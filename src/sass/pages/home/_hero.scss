@@ -1,0 +1,243 @@
+.home-hero {
+	position: relative;
+	height: vh(1150/980);
+	background-color: $c-black;
+	@include upLaptop {
+		min-height: 880px;
+	}
+	@include tabletMaxi {
+		height: vh(1286/1366);
+	}
+	@include mobile {
+		height: 100vh;
+	}
+}
+
+.home-hero__bg {
+	@include absolute-background;
+	opacity: .6;
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 5;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: percentage(280/1150);
+		background: linear-gradient(180deg, rgba(#434330, 0) 0%, #434330 100%);
+		@include tabletMaxi {
+			height: percentage(509/1286);
+		}
+		@include mobile {
+			display: none;
+		}
+	}
+}
+
+.home-hero__content {
+	position: relative;
+	z-index: 20;
+	height: 100%;
+	@include mobile {
+		padding: 0 $wrap-mob-md 19px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+.home-hero__title {
+	font-family: $font-accent;
+	font-size: vw(300/1620);
+	line-height: 1.1;
+	font-weight: 200;
+	@include tabletMaxi {
+		font-size: vw(210/1024);
+	}
+	@include mobile {
+		position: relative;
+		z-index: 50;
+		margin-bottom: 22px;
+		width: 100%;
+		text-align: center;
+		font-size: vw(70/414);
+		line-height: 1;
+	}
+
+	b, strong {
+		font-weight: 400;
+	}
+}
+
+[class*=home-hero__word] {
+	position: absolute;
+	z-index: 50;
+	@include mobile {
+		position: static;
+	}
+}
+
+.home-hero__word-top {
+	right: percentage(180/1620);
+	top: percentage(140/1150);
+	@include tabletMaxi {
+		right: percentage(136/1024);
+		top: percentage(212/1286);
+	}
+}
+
+.home-hero__word-center {
+	left: percentage(110/1620);
+	top: percentage(446/1150);
+	@include tabletMaxi {
+		left: $wrap-tab-sm;
+	}
+}
+
+.home-hero__word-bottom {
+	right: percentage(104/1620);
+	top: percentage(752/1150);
+	@include tabletMaxi {
+		right: $wrap-tab-sm;
+		top: percentage(906/1286);
+	}
+}
+
+.home-hero__intro {
+	position: absolute;
+	z-index: 40;
+	top: 47.7%;
+	left: 51.03%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	font-family: $font-accent;
+	font-size: vw(36/1620);
+	line-height: 1.1;
+	font-weight: 200;
+	@include tabletMaxi {
+		left: percentage(513/1024);
+		top: percentage(600/1286);
+		width: vw(320/1024);
+		font-size: vw(46/1024);
+		line-height: 1;
+	}
+	@include mobile {
+		position: relative;
+		left: auto;
+		top: auto;
+		transform: none;
+		width: 100%;
+		font-size: vw(24/414);
+	}
+
+	b, strong {
+		font-weight: 400;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		right: 100%;
+		top: vw(-9/1620);
+		width: vw(24/1620);
+		height: vw(24/1620);
+		border: 2px solid $c-accent;
+		border-right: none;
+		border-bottom: none;
+		@include tabletMaxi {
+			left: vw(-20/1024);
+			top: vw(-10/1024);
+			width: vw(24/1024);
+			height: vw(24/1024);
+		}
+		@include mobile {
+			left: vw(8/414);
+			top: vw(-5/414);
+			width: vw(15/414);
+			height: vw(15/414);
+		}
+	}
+}
+
+[class*=home-hero__img] {
+	position: absolute;
+	z-index: 30;
+	background-color: $c-black;
+
+	img {
+		@include absolute-full-width;
+		object-fit: cover;
+	}
+}
+
+.home-hero__img-left {
+	left: percentage(260/1620);
+	top: 0;
+	width: percentage(380/1620);
+	@include aspect-ratio(416, 380);
+	@include tabletMaxi {
+		left: percentage(185/1024);
+		width: percentage(149/1024);
+		@include aspect-ratio(190, 149);
+	}
+	@include mobile {
+		left: $wrap-mob-md;
+		top: percentage(203/896);
+		width: percentage(111/414);
+		@include aspect-ratio(141, 111);
+	}
+
+	img {
+		opacity: .8;
+		@include mobile {
+			opacity: .7;
+		}
+	}
+}
+
+.home-hero__img-right {
+	right: $wrap-desk-md;
+	top: percentage(52/1150);
+	width: percentage(220/1620);
+	@include aspect-ratio(280, 220);
+	@include tabletMaxi {
+		right: $wrap-tab-lg;
+		top: percentage(159/1286);
+		width: percentage(231/1024);
+	}
+	@include mobile {
+		right: $wrap-mob-sm;
+		top: percentage(382/896);
+		width: percentage(196/414);
+	}
+
+	img {
+		opacity: .9;
+	}
+}
+
+.home-hero__img-bottom {
+	left: $wrap-desk-md;
+	top: percentage(660/1150);
+	width: percentage(457/1620);
+	@include aspect-ratio(615, 457);
+	@include tabletMaxi {
+		left: $wrap-tab-lg;
+		top: percentage(500/1286);
+		width: percentage(314/1024);
+	}
+	@include mobile {
+		left: $wrap-mob-md;
+		top: percentage(734/896);
+		width: percentage(177/414);
+		@include aspect-ratio(220, 177);
+	}
+
+	img {
+		opacity: .7;
+		@include mobile {
+			opacity: .6;
+		}
+	}
+}

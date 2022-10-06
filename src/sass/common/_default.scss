@@ -1,0 +1,32 @@
+html,
+body {
+	background-color: $c-dark;
+	font-family: $font-default;
+	font-weight: 400;
+	color: $c-beige;
+}
+
+main {
+	width: 100%;
+}
+
+img,
+video,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+	fill: currentColor;
+}
+
+button,
+a,
+[class *= "button"],
+[class *= "btn"],
+[class *= "link"],
+[type *= "submit"] {
+	cursor: pointer;
+}

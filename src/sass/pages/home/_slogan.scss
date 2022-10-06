@@ -1,0 +1,54 @@
+.slogan {
+	position: relative;
+	height: vh(1030/980);
+	padding-top: vw(95/1620);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: $c-black;
+	@include tabletMaxi {
+		height: vh(900/1366);
+		padding-top: vw(60/1024);
+	}
+	@include mobile {
+		height: vh(560/896);
+	}
+}
+
+.slogan__bg {
+	@include absolute-background;
+	opacity: .8;
+	@include tabletMaxi {
+		opacity: .6;
+	}
+
+	img {
+		opacity: .84;
+	}
+}
+
+.slogan__ticker {
+	position: relative;
+	z-index: 50;
+	overflow: hidden;
+	display: flex;
+	font-family: $font-accent;
+	font-size: vw(200/1620);
+	line-height: 1.1;
+	font-weight: 200;
+	@include tabletMaxi {
+		font-size: vw(200/1024);
+	}
+	@include mobile {
+		font-size: vw(80/414);
+	}
+}
+
+.slogan__txt {
+	flex-shrink: 0;
+	display: flex;
+
+	span {
+		flex-shrink: 0;
+	}
+}

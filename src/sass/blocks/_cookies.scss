@@ -1,0 +1,95 @@
+.cookies {
+	position: fixed;
+	z-index: map-get($z-index, modal);
+	left: 50%;
+	bottom: 30px;
+	transform: translate(-50%, 0);
+	width: calc(100% - 60px);
+	max-width: 1066px;
+	padding: 15px 15px 15px 43px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba($c-white, .97);
+	color: $c-dark;
+	transition: opacity $ease-300;
+	@include tabletMaxi {
+		bottom: 25px;
+		max-width: 500px;
+		padding: 33px 32px 34px;
+		flex-direction: column;
+	}
+	@include mobile {
+		bottom: 10px;
+		width: calc(100% - 20px);
+		padding: 24px;
+	}
+	@include mobileMicro {
+		padding: 20px 12px;
+	}
+}
+
+.cookies--hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.cookies__text {
+	padding-top: 4px;
+	font-size: 15px;
+	line-height: (20/15);
+	font-weight: 400;
+	text-transform: uppercase;
+	@include tabletMaxi {
+		margin-bottom: 19px;
+		text-align: center;
+	}
+	@include mobile {
+		margin-bottom: 22px;
+		font-size: 14px;
+	}
+
+	a {
+		border-bottom: 1px dashed $c-green;
+		color: black;
+		transition: border-color $ease-300;
+
+		@include hover {
+			border-color: transparent;
+		}
+	}
+}
+
+.cookies__buttons {
+	display: flex;
+}
+
+.cookies__btn {
+	width: 160px;
+	height: 60px;
+	font-size: 19px;
+	font-weight: 200;
+	text-transform: none;
+	@include tabletMaxi {
+		width: 170px;
+	}
+	@include mobileMicro {
+		width: 160px;
+	}
+
+	&:not(:last-child) {
+		margin-right: 6px;
+	}
+
+	.icon-check {
+		margin-left: 5px;
+		width: 14px;
+		height: 8px;
+	}
+
+	.icon-cross-medium {
+		margin-left: 11px;
+		width: 11px;
+		height: 11px;
+	}
+}
