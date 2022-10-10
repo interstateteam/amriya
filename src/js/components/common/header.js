@@ -1,7 +1,7 @@
 export default () => {
 
 	const header = document.querySelector('.js-header');
-	// const burger = document.querySelector('.js-burger');
+	const burger = document.querySelector('.js-burger');
 	const popUp = document.querySelector('.js-booking');
 
 	window.addEventListener('scroll', () => {
@@ -12,10 +12,10 @@ export default () => {
 		}
 	})
 
-	// burger.addEventListener('click', () => {
-	// 	if (!popUp || popUp.matches('.is-invisible')) {
-	// 		header.classList.toggle('header--menu-opened');
-	// 	}
-	// })
+	burger.addEventListener('click', () => {
+		if (!popUp || popUp.matches('.is-invisible')) {
+			header.classList.toggle('header--menu-opened');
+		}
+	})
 
 };

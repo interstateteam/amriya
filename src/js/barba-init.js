@@ -30,7 +30,7 @@ export default function () {
 
 				/** Close menu */
 				document.querySelector('.js-header').classList.remove('header--menu-opened');
-				// document.querySelector('.js-menu').classList.remove('menu--opened');
+				document.querySelector('.js-menu').classList.remove('menu--opened');
 				document.body.classList.remove('no-scroll');
 
 				/** Scroll window to the top */

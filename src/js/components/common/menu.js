@@ -3,24 +3,24 @@ import { isMobile } from './../../helpers/detect-device';
 
 export default () => {
 
-	// const burger = document.querySelector('.js-burger');
-	// const menu = document.querySelector('.js-menu');
-	// const menuList = menu.querySelector('.js-menu-list');
+	const burger = document.querySelector('.js-burger');
+	const menu = document.querySelector('.js-menu');
+	const menuList = menu.querySelector('.js-menu-list');
 	const opensSublists = menu.querySelectorAll('.js-open-sublist');
-	// const sublists = menu.querySelectorAll('.js-menu-sublist');
+	const sublists = menu.querySelectorAll('.js-menu-sublist');
 	const mobileSublists = menu.querySelectorAll('.js-sublist-mobile');
 	const popUp = document.querySelector('.js-booking');
 
-	// burger.addEventListener('click', () => {
-	// 	if (!popUp || popUp.matches('.is-invisible')) {
-	// 		menu.classList.toggle('menu--opened');
-	// 		document.body.classList.toggle('no-scroll');
+	burger.addEventListener('click', () => {
+		if (!popUp || popUp.matches('.is-invisible')) {
+			menu.classList.toggle('menu--opened');
+			document.body.classList.toggle('no-scroll');
 
-	// 		sublists.forEach(list => {
-	// 			list.style.height = menuList.offsetHeight + 'px';
-	// 		});
-	// 	}
-	// })
+			sublists.forEach(list => {
+				list.style.height = menuList.offsetHeight + 'px';
+			});
+		}
+	})
 
 	opensSublists.forEach(openSublist => {
 		openSublist.addEventListener('click', () => {

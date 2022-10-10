@@ -89,6 +89,16 @@
 		line-height: (30/18);
 	}
 
+	span{
+		height:50px;
+		display: block;
+		&:first-child{
+			height:0;
+		}
+	}
+
+	
+
 	#{$h} {
 		margin-bottom: 24px;
 		font-family: $font-accent;
@@ -96,11 +106,17 @@
 		line-height: (40/34);
 		font-weight: 200;
 
-		&:not(:first-child) {
-			@include upTablet {
-				margin-top: 69px;
-			}
-		}
+		// &:first-child {
+		// 	@include upTablet {
+		// 		margin-top: 0;
+		// 	}
+		// }
+
+		// &:not(:first-child) {
+		// 	@include upTablet {
+		// 		margin-top: 69px;
+		// 	}
+		// }
 	}
 
 	p, ul, ol, li {

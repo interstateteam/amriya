@@ -20,10 +20,9 @@
 		{% include "blocks/_header.twig" %}
 		{% include "blocks/_cookies.twig" %}
 
-		<div class="barba-container" data-barba="container" data-barba-namespace="{{ nameSpace }}">
+		<div>
 			{# put here the content you wish to change between your pages, like your main content <h1> or <p> #}
-			<div class="js-page-transition">
-
+			<div class="">
 				{% block content %}{% endblock %}
 			</div>
 		</div>

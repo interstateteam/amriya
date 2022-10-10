@@ -6,6 +6,6 @@ import cookies from './components/common/cookies';
 export default () => {
 	setFullHeight(); //Set VH variable for mobile safari 100VH, use scss mixin fullheight()
 	header();
-	// menu();
+	menu();
 	cookies();
 };
